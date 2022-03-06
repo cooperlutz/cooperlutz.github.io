@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Mastering ARM Templates Episode 1 - Development | Cooper's Cloud</title>
+	<meta name="description"
+		content="In the previous episode, we took a look at the ARM template schema, some of the tools that will help get you started in your ARM template journey, and deploy...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/cooperlutz.github.io/2018/04/26/mastering-arm-templates-2.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
+		href="/cooperlutz.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+		integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+		integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+		crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/cooperlutz.github.io/">
+			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/cooperlutz/cooperscloud" title="Follow on GitHub">
+		<i class="fab fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/cooperlutz.github.io/')">
+    <h1 class="title">Mastering ARM Templates Episode 1 - Development</h1>
+    
+    <p class="meta">
+      April 26, 2018
+      
+    </p>
+  </header>
+  <section class="post-content"><p>In the <a href="https://cooperscloud.tech/arm-templates-ep1/">previous episode</a>, we took a look at the ARM template schema, some of the tools that will help get you started in your ARM template journey, and deployed our first template. In this installation, we’ll take a deeper dive into some of the development methods and strategy.</p>
+<h2>Define Template Scope</h2>
+<p>Before developing a template, it’s important to define the scope of the template. In extreme cases, this could be the difference between the idea of an “infrastructure in a box” where you deploy a single template for your entire infrastructure vs. deploying separate templates for each resource type as you would in the Portal. Like most things, I think the best strategy is somewhere in the middle, and depends on your needs.</p>
+
+<p>Generally, a good start is to begin your scope at the Resource Group level (however, it is possible to deploy to multiple Resource Groups). Some other things to think about when scoping the template are the region, life-cycle, deployment frequency, resource types, and purpose, of the resources.</p>
+
+<p>For example, we may have an application that requires multiple Virtual Machines with separate roles. The architecture calls for 2 front-end servers, 2 application servers, and 2 back-end servers. You <em>could</em> deploy all 6 servers with a single template, but that could get convoluted and doesn’t provide the flexibility to easily redeploy a single tier. In this case, we can scope the templates to the tier level and separate out the 3 tiers into 3 templates.</p>
+<h2>Define Resource Property Values</h2>
+<p>With the template scope defined, the next step is to define the resource property values. These are the settings applied to Azure resources, like a Virtual Network’s address space, or a Virtual Machine’s OS.</p>
+
+<p>Parameters can be used to define values that can change between deployments. The more parameters defined, the more dynamic the template becomes. Resource names are a great example of values that are generally set as parameters.</p>
+
+<p>Variables can be used to reference hard-coded values that can be used multiple times throughout the template and are not going to change throughout deployments. However, defining a resource property as a variable allows us to easily change the value at a later point in time if needed.</p>
+
+<p>Hard-coded values can be used to define settings that are not changing between deployment and are not going to change.</p>
+<h2>Define a Folder Structure</h2>
+<p>Determining an organized folder structure can be extremely valuable when developing your templates. As you start digging into more complex templates with multiple references, it’s easy to lose track of your files and end up with code sprawl.</p>
+
+<p>Generally, I start by creating a root folder with a name that specifies the purpose of the template.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/rootfolder.png" alt="image alt text" /></p>
+
+<p>Inside the root folder, I place the template “azuredeploy.json” file, along with dedicated folders for the additional files that will be referenced by the template.  The “parameters” folder for instance, contains any of the parameters files that are used to deploy the template. Multiple sets of parameters files can be stored inside this folder for separate deployments.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ARMTemplateFolderStructure.png" alt="image alt text" /></p>
+<h2>Understanding ARM API Versions</h2>
+<p>Each resource defined in a template contains an API version reference . Understanding how Azure manages these API versions can save you a lot of headache. Azure releases new API versions that include the latest features or settings available for a resource. However, it’s important to note that when a new API version is released, only certain Azure resources will be included in the release. This means that we can’t just grab the latest API version available and use that value for every resource in the template. It’s important to keep track of these API releases and ensure that templates are kept up to date.</p>
+
+<p>The Azure team maintains a public GitHub repository of the ARM API versions available.</p>
+
+<p><a href="https://github.com/Azure/azure-resource-manager-schemas/tree/master/schemas">https://github.com/Azure/azure-resource-manager-schemas/tree/master/schemas</a></p>
+
+<p>Additionally, you can download the deployment schema from the link below and search for the specific resource type and API versions available for that resource.</p>
+
+<p><a href="https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json">https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json</a></p>
+
+<p> </p>
+<h2>Development Scenario and Methods</h2>
+<p>There are multiple options for developing templates. To demonstrate these options, we’ll create an ARM template to deploy the following architecture. In this example we’re assuming that we have a server based web application that will utilize an Azure SQL database at the data tier.</p>
+
+<p> </p>
+
+<p><img src="/cooperlutz.github.io/assets/img/architecture.png" alt="image alt text" /></p>
+<h4></h4>
+<h4>QuickStart Templates</h4>
+<p>We’ll start by browsing to the Azure QuickStart Template repository that’s hosted on GitHub. From here, we can search through sample templates for one that suits our needs. One of the sample templates available (shown below) will serve as a great starting point will account for the web application server.</p>
+
+<p>Browse to the following location and download the “azuredeploy.json” and “azuredeploy.parameters.json” files.</p>
+
+<p><a href="https://github.com/Azure/azure-quickstart-templates/tree/master/101-1vm-2nics-2subnets-1vnet">https://github.com/Azure/azure-quickstart-templates/tree/master/101-1vm-2nics-2subnets-1vnet</a></p>
+
+<p><img src="/cooperlutz.github.io/assets/img/azurequickstart.png" alt="image alt text" /></p>
+<h4>Azure Generated Automation Script Templates</h4>
+<p>With our web application server taken care of, we need to add in our SQL Server and Database. For these two components, we’ll download the Automation Script template that Azure generates for existing resources.</p>
+
+<p>We’ll start by provisioning an Azure SQL instance within the portal.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/createSQLdb.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Once the SQL deployment is complete, we’ll navigate to the SQL Database resource and browse to the “Automation Script” blade. It’s important to note that the Automation Script will consist of all resources within the same Resource Group.</p>
+
+<p>At the top of the Automation Script blade, we can download the template files to our local machine.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/downloadSQLtemplate.png" alt="image alt text" /></p>
+
+<p>The downloaded template contains a number of reference files:</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ARMtemplatedownloadfiles.png" alt="image alt text" /></p>
+
+<p>deploy.ps1 - PowerShell deployment script</p>
+
+<p>deploy.sh - <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI</a> deployment script</p>
+
+<p>deployer.rb - <a href="https://github.com/Azure/azure-sdk-for-ruby">Azure Ruby SDK</a> deployment script</p>
+
+<p>DeploymentHelper.cs - C# class to deploy the template</p>
+
+<p>parameters.json - parameters file for the deployment</p>
+
+<p>template.json - core template file containing all of the resources to be deployed</p>
+
+<p>For now, all we’re going to need from these files are: parameters.json and template.json.</p>
+<h4>Stitching the Templates Together</h4>
+<p>Now we need add the Azure SQL components into our template.</p>
+
+<p>When we open up the <a href="https://gist.github.com/cooperlutz/cbf4cfbeee48aa3ea2ba72b467c313f1">downloaded template</a>, we find that it consists of a number of resources outside of the Azure SQL Server and Database. In this case these resources include some of the Azure SQL settings that are provided by default and weren’t necessarily defined when we created the database in the Portal. For our purposes, we’ll remove all the resources and parameters outside of the SQL Server and Database. Then we can just copy/paste these sections into our existing template.</p>
+
+<p> </p>
+<h4>Template Reference Documentation</h4>
+<p>It’s just about time to test our template but let’s validate our downloaded template against the reference documentation. Navigate to the Azure reference documentation (found <a href="https://docs.microsoft.com/en-us/azure/templates/">here</a>) and browse under the “Reference” section to find SQL &gt; Servers. In comparing the downloaded Automation Script template to the reference documentation, we notice that the ”administratorLoginPassword” setting is missing from our template. Since the Automation Script does not download the secure string value, the setting is omitted from the downloaded template. It’s imperative to set a password on the database, so we’ll add this property into our template.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/sqlserver-downloaded.png" alt="image alt text" /></p>
+
+<p><img src="/cooperlutz.github.io/assets/img/SQLServertemplatereference.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Currently, our template consists of the Azure QuickStart Virtual Network, Subnets, Virtual Machine, Network Interfaces, and the Automation Script downloaded SQL Server and Database which we validated against the template reference documentation. Let’s take a look at this template and deploy it into Azure.</p>
+
+<p><a href="https://github.com/cooperlutz/cooperscloud/tree/master/arm-templates/ntier-VM-AzureSQL">https://github.com/cooperlutz/cooperscloud/tree/master/arm-templates/ntier-VM-AzureSQL</a></p>
+
+<p>We have all of the components accounted for - as laid out in our diagram - so let’s try deploying it:</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/deploymentStart.png" alt="image alt text" /></p>
+<h2>Success!</h2>
+<p>Our template deployed successfully. Now we can take a look at our Resource Group in the Azure Portal and find that it consists of all the resources defined in our architecture.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/deploymentSuccess.png" alt="image alt text" /></p>
+</section>
+  
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title> Cooper's Cloud</title>
+	<meta name="description"
+		content="Cooper's Cloud">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/cooperlutz.github.io/">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
+		href="/cooperlutz.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/cooperlutz.github.io/">
+			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/cooperlutz/cooperscloud" title="Follow on GitHub">
+		<i class="fab fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+
+</header>
+
+    <div class="content">
+      <div class="home">
+  
+
+  <div class="posts">
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/cooperlutz.github.io/2019/04/09/azuread-aadds-adds.html">
+            Azure AD, Azure AD DS, & AD DS on Azure
+          </a>
+        </h1>
+        <p class="meta">
+          April 9, 2019
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>What are these different services? When should we use one versus the other? Do they provide similar capabilities? There are a number of identity options within Azure and its easy to confuse the purposes and capabilities of each solution.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/AADDS_AAD_ADDS_Architecture-1024x538.png" alt="image alt text" /></p>
+
+<!-- wp:heading {"level":3} -->
+<h3>Azure AD</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Many organizations today are already utilizing Azure AD and may not even realize it. Azure AD by default is a cloud based domain service that provides the ability to create and manage users and groups and provide access to Azure or Office 365. In the context of Azure, Azure AD is utilized in conjunction with Azure RBAC to control user access to different Subscriptions and Resources within Azure. Azure AD is almost a given today and is utilized <strong>in addition to Active Directory Domain Services, not as a replacement.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>AD DS on Azure</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Here I'm referring to AD DS (Active Directory Domain Services) running on Azure Virtual Machines, a service which should be a very familiar to most organizations. There are a few things to take into consideration when configuring Domain Controllers within Azure but overall the service itself behaves exactly the same as it would with your existing Domain Services. For a brand new Azure deployment, AD DS Domain Controller Virtual Machines are typically one of the first workloads to deploy. This comes down to treating Azure as an extension of your data center and providing Domain Service capabilities to your Azure workloads in the event that the connection back to your data center is dropped and to ensure that Azure workloads aren't having to traverse an ExpressRoute or VPN connection every single time they need to check into the domain. AD DS on Azure is almost a given for organizations that are already reliant on AD DS. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Azure AD DS</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Azure AD Domain Services is a newer feature available within Azure that provides managed domain as a service capabilities. Think of it as PaaS version of Domain Controllers. Sounds really nice, right? A word of caution, as this service can trip you up if you don't utilize it correctly. It is important to remember - <strong>Azure AD DS is NOT a replacement or extension of your existing domain. </strong>Although it would be really nice to never have to build Domain Controller VMs in Azure, that is not realistic at this point in time for most organizations.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So what is Azure AD DS? Azure AD Domain Services is a domain service that synchronizes Azure AD users, groups, and passwords, to a managed service available to Azure Virtual Machines. Once available, Virtual Machines can be joined to the managed domain and utilize Group Policy, users, and group membership similar to traditional Active Directory Domain Services.<br />Users, Groups, and Passwords are synchronized from Azure Active Directory to the managed domain instance, but <strong>group policy is not synchronized.</strong><br /></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>Only one instance of Azure AD DS can be deployed per Azure AD Tenant (no multi-region deployments)</li><li>Azure AD DS is highly available within each instance</li><li>Azure AD DS is a separate domain, but can be synchronized with your existing domain</li><li>Group Policy is not synchronized to Azure AD DS</li><li>Group Policy Objects can be created within Azure AD DS</li><li>Domain and Enterprise admin capabilities are not available for Azure AD DS</li><li>Azure AD password hash synchronization is required for Azure AD DS</li><li>Azure AD users and groups are synchronized to Azure AD DS</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Example Scenario</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In the following graphic portrays how each identity service may be utilized in a scenario of managing a single Azure Windows Virtual Machine.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/Azure_DS_Scenarios-1024x504.png" alt="image alt text" /></p>
+
+<!-- wp:paragraph -->
+<p>In this scenario, the Windows VM can be joined to either AD DS domain or my Azure AD DS domain, but not both. The option to join a Virtual Machine to one of these domains is one or the other situation.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/ADDS_AADDS_diagram-1024x485.png" alt="image alt text" /></p>
+
+<!-- wp:heading -->
+<h2>What do we do?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>With this information, the solution that makes sense for most organizations includes deploying AD DS Domain Controllers on Azure and utilizing Azure AD synchronization to manage resources and users within the Azure Portal. Azure AD DS is a great service but should be used for a specific use case.</p>
+
+        <a class="button" href="/cooperlutz.github.io/2019/04/09/azuread-aadds-adds.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/cooperlutz.github.io/2018/12/31/developing-custom-dashboards.html">
+            Developing Custom Dashboards in Azure
+          </a>
+        </h1>
+        <p class="meta">
+          December 31, 2018
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>Whether you've been working with Azure for years or are just getting started, you'll often find yourself starting at the Dashboard blade as you work in the Azure Portal. Every time you login, as you're navigating around and working through various tasks, after you've spent your entire 8 hour day trying to build out or troubleshoot an application, the Dashboard will always be there along for the ride. Building a custom Dashboard can enable you to quickly consume relevant information, identify issues, and make navigating the Azure Portal a much more enjoyable experience. In this post we'll explore some of the ins and outs of Dashboard templates as well as some of the features available for working with Dashboards.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Custom Dashboard Sample</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This is the default Dashboard that I use for my personal Azure environment. I've kept the Dashboard simple, but effective, for my purposes. I've embedded my logo, links to some Azure documentation that I visit regularly, the "All Resources" tile to quickly access Resources I've recently been working with, an Application Insights availability test that monitors the availability of the <a href="https://cooperscloud.tech">cooperscloud.tech</a> site, and an image of a Sample Azure application architecture.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/DashboardImage-1024x646.png" alt="image alt text" /></p>
+
+<!-- wp:heading -->
+<h2>Methods for Creating and Developing Dashboards</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In this post we'll focus on developing and working with Dashboards in code, but Azure provides numerous methods to customize your Dashboard within the Portal:<br />- Using the Dashboard editor<br />- Manually pinning Azure Resources to your dashboard<br />- Developing a Dashboard in JSON and uploading to the portal<br />- Auto-generating Dashboards that come pre-configured within certain Azure Services (i.e. Application Insights)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Download Existing Azure Dashboards</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Existing Dashboards can be downloaded in JSON format from the Dashboard page. This feature provides the ability to manually customize a Dashboard and then save and re-deploy the Dashboard as code. This feature can be really useful when you want to quickly understand how a Tile is formatted before re-writing the code.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/DashboardDownload.png" alt="image alt text" /></p>
+
+<!-- wp:heading -->
+<h2>Develop Custom Azure Dashboards</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Although the Dashboard editor is fairly easy to work with, once you can get the hang of defining Dashboards in code, you'll have much more flexibility in creating meaningful and reusable Dashboards. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The code for the sample Dashboard in this post can be found here: <a href="https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/coopersclouddashboard.json">https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/coopersclouddashboard.json</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Within the sample code, the sections should look fairly familiar if you have previously worked with Azure ARM Templates. The Dashboard definition starts with a name, type, location, and API version, and we define all of our tiles within the Properties object.<br /></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Within the properties object is a single "lenses" object where we define a "0" object, which contains a parts object, which identifies each of our tiles by number, and THAT's where we define our tiles. It's a little bit confusing but the reason it's currently defined in this manner is to provide capabilities for future updates to Dashboards (which is always exciting!) My guess is that the lenses will provide a sort of page feature that you can switch between within a single Dashboard (kind of like an image slider on a web page). However, this is purely speculation and my personal opinion of what I'd like to see. But for now, we get 1 Lense. If you'd prefer to just skip over all of the confusion, I've provided a template sample that you can start with: <a href="https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/baseDashboard.json">https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/baseDashboard.json</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p> <a href="https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/baseDashboard.json">https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/baseDashboard.json</a>.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/DashboardBaseJson.png" alt="image alt text" /></p>
+
+<!-- wp:paragraph -->
+<p>Taking a further look at the Tile definition, the first JSON object defined is the Tile's "position", giving us the ability to control the size and location on the Dashboard grid. The image below displays the Dashboard "edit" view and displays the Dashboard grid. The second part of defining our Tile is the "metadata" object, which is where we define the type and content of the Tile.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/DashboardGrid.png" alt="image alt text" /></p>
+
+<!-- wp:paragraph -->
+<p>The first tile defined in the Sample Dashboard is a Markdown tile which gives us the ability to create and format freeform text in Markdown syntax. In this case, I used this Markdown tile for the sole purpose of embedding my logo. </p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/DashboardCode-1024x654.png" alt="image alt text" /></p>
+
+<!-- wp:paragraph -->
+<p>Now in the case above for linking to a logo, I just linked directly to the image hosted on my website, but for the Sample Application Architecture tile, I link to an Azure Storage Account blob with a SAS token. In this way, I could link to proprietary images, such as application architectures deployed in my Azure environment, reference documentation to my applications, etc.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/AppArchitectureTile-1024x242.png" alt="image alt text" /></p>
+
+<!-- wp:paragraph -->
+<p>Once we've defined all of the tiles in our Dashboard, all we have to do is save the file and click the "Upload" button from the Dashboard blade. We'll be prompted to choose the file to upload and then the Dashboard will be deployed and populated!</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/UploadDashboard-1024x80.png" alt="image alt text" /></p>
+
+<!-- wp:heading -->
+<h2>Share Azure Dashboards</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Once you've created a Dashboard that you'd like to share amongst others who are working in your Azure environment, you can deploy the Dashboard to a Resource Group so that it may be used by others.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Click the "Share" button at the top of the "Dashboard" blade, then choose a name, subscription, and location. By default Azure will create a "dashboards" Resource Group for the Dashboard resource to be deployed to, but you can deploy it to a different RG if you prefer.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/ShareDashboard-1024x372.png" alt="image alt text" /></p>
+
+<p><img src="/cooperlutz.github.io/assets/img/SharedDashboardResource-1024x360.png" alt="image alt text" /></p>
+
+<!-- wp:paragraph -->
+<p>Once the Dashboard is shared, other users will have the ability to switch to the Shared Dashboard under their Dashboard selector. Shared Dashboards also come with the ability to control which users have access to view the Dashboard.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/OtherUserSelectDashboard.png" alt="image alt text" /></p>
+
+<!-- wp:heading -->
+<h2>Azure Portal Home versus Dashboard View</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>With the introduction of the Azure Home page, you now have the ability to choose whether you'd prefer your default Azure Portal view to be Home or Dashboard. To change the preferred default Portal view, all you need to do is open the Settings gear icon in the top right of the Portal, and modify the "Choose your default view" setting.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Although I do like the look and feel of the new "Home" and it has some great resources, it's currently geared more toward a "first time logging in" experience. I personally hope it evolves toward serving as a hub for news, developments, and releases within Azure in addition to the educational reference links.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/AzureHomevsDashboard-1024x318.png" alt="image alt text" /></p>
+
+        <a class="button" href="/cooperlutz.github.io/2018/12/31/developing-custom-dashboards.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/cooperlutz.github.io/2018/07/09/azure-management-groups.html">
+            Improve Subscription Management with Azure Management Groups
+          </a>
+        </h1>
+        <p class="meta">
+          July 9, 2018
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>Organizations and individuals often utilize multiple Subscriptions across their Azure environment. Depending on the needs of an organization, these may be split up by department, life-cycle, business unit, etc., and result in one or hundreds of Azure Subscriptions. The more Azure Subscriptions we have, the more difficult it becomes to manage each Subscriptions access controls and Azure Policy, often resulting in Subscription sprawl. With the introduction of Azure Management Groups, we can now more effectively manage our Azure Subscriptions by grouping them into containers, similar to the way we group like Azure Resources into Resource Groups.</p>
+
+<p> </p>
+<h2>Azure Management Groups Scenario</h2>
+<p>To demonstrate Azure Management Groups, we will create the below hierarchy for our 3 Azure Subscriptions, which are segmented by life-cycle, Prod, Test, and Dev. In this case, we’ll create 2 Management Groups for “Prod” and “Testing”. We want to ensure that our Dev and Test Subscriptions have similar levels of access for our Developers, but we need to restrict Prod access.</p>
+
+<p><img class="alignnone size-full wp-image-400" src="assets/img/AzureManagementGroupDiagram.png" alt="" width="740" height="640" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+<h2>Azure Management Group Details</h2>
+<ul>
+ 	<li>Azure Management Groups can be assigned Access Controls and Azure Policies</li>
+ 	<li>Azure Policy and access controls assigned to a Management Group are inherited by child Subscriptions and Management Groups</li>
+ 	<li>A Subscription can be assigned to 1 Management Group</li>
+ 	<li>Management Groups can be renamed</li>
+ 	<li>Management Groups can contain multiple Subscriptions and/or Management Groups</li>
+ 	<li>Management Groups can be moved to other Management Groups</li>
+ 	<li>New Subscriptions are assigned to the Tenant Root Group</li>
+</ul>
+<p> </p>
+<h2>Creating Our Azure Management Group Hierarchy</h2>
+<p>To start building our Management Group hierarchy, we’ll begin by navigating to the “Management Groups” blade.</p>
+
+<p><img class="alignnone size-full wp-image-404" src="assets/img/managementGroupsBlade.png" alt="" width="491" height="161" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>We’ll start by enabling Azure Management Groups which will also create our “Tenant Root Group”, the root or highest level Management Group.</p>
+
+<p> </p>
+
+<p><img class="alignnone wp-image-414" src="assets/img/enableManagementGroups.png" alt="" width="608" height="260" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2>Create Azure Management Groups</h2>
+<p>Now we can create our child Management Groups. We’ll create 2 Management Groups per our above hierarchy, “Prod” and “Testing”.</p>
+
+<p><img class="alignnone size-full wp-image-415" src="assets/img/addManagementGroup.png" alt="" width="457" height="127" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Our Management Groups are made up of a name and ID. We will correlate these names and IDs to our “Prod” and “Testing” environments.</p>
+
+<p><img class="alignnone size-full wp-image-405" src="assets/img/prodMG.png" alt="" width="424" height="340" />             <img class="alignnone wp-image-406" src="assets/img/testMG.png" alt="" width="399" height="342" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2>Assign Subscriptions to Azure Management Groups</h2>
+<p>With both of our Management Groups created, we need to assign our Subscriptions to our Management Groups. Under our “Testing” Management Group, we’ll click on the “(details)” link.</p>
+
+<p><img class="alignnone wp-image-416" src="assets/img/addSubscription1-1.png" alt="" width="685" height="182" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Within our “Testing” Management Group, we can assign access control, Azure Policy and assign any child Management Groups or Subscriptions. We’ll click on the “+ Add subscription” button to assign our “Dev” and “Test” Subscriptions.</p>
+
+<p><img class="alignnone size-full wp-image-408" src="assets/img/addSubscription2.png" alt="" width="1131" height="328" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>A drop-down will allow us to choose from our list of available Subscriptions.</p>
+
+<p><strong>IMPORTANT NOTE: </strong>Existing access controls assigned to our Subscription will be removed once assigned to the new Management Group. Therefore, if we are migrating any subscriptions to this new model, we want to first assign their existing permissions set at the Subscription level, to the Management Group level. When migrating to Azure Management Groups, we want to ensure that we don’t lose any permissions.</p>
+
+<p><img class="alignnone size-full wp-image-411" src="assets/img/addSubscription3-2.png" alt="" width="424" height="473" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>We’ll copy this same process with our remaining Subscriptions and we’ve now successfully created our defined Management Group hierarchy.</p>
+
+<p><img class="alignnone size-full wp-image-421" src="assets/img/completeMG.png" alt="" width="935" height="470" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+        <a class="button" href="/cooperlutz.github.io/2018/07/09/azure-management-groups.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/cooperlutz.github.io/2018/05/29/mastering-arm-templates-3.html">
+            Mastering ARM Templates Episode 3 - Deployment
+          </a>
+        </h1>
+        <p class="meta">
+          May 29, 2018
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>In previous episodes we took a look at the <a href="https://cooperscloud.tech/arm-templates-ep1/">basics of ARM Templates</a>, and some of the methods of <a href="https://cooperscloud.tech/arm-templates-ep2/">developing ARM Templates</a>. In this installation, we’ll take a look at common deployment options.</p>
+<h2>Deployment Strategy</h2>
+<p>When it comes to determining a standard deployment strategy for ARM Templates, there are a number of options, but the goal is to choose a strategy that fits the audience and situation. In certain circumstances it might make sense to mix and match these options to fit our overall deployment strategy.</p>
+
+<p>To help with this decision, I’ve created a flowchart based on my own experiences and personal opinions:</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ARMTemplateDecisionFlowchart.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2>Deployment Concepts</h2>
+<h4>Resource Groups</h4>
+<p>Templates are always deployed <em>to</em> a Resource Group, and Resource Groups cannot be created via ARM Templates. This means that the target Resource Group must exist prior to template deployment.</p>
+
+<p> </p>
+<h4>Template Validation</h4>
+<p>Prior to deploying a template, we can validate the template code to ensure there are no syntax errors or missing values. This is done by default when deploying templates through the Azure portal, but this can also be done via PowerShell.</p>
+<pre><a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/test-azurermresourcegroupdeployment?view=azurermps-6.1.0">Test-Azure<wbr />RmResource<wbr />Group<wbr />Deployment</a>
+</pre>
+<p> </p>
+<h4>Deployment Mode</h4>
+<p>Templates can be deployed in “incremental” or “complete” modes. The default deployment mode is incremental, specifying that the resources deployed to the target Resource Group are incremental changes or additions to the Resource Group. In contrast, when deploying in complete mode, we are specifying that the template deployment is the desired final state for the target Resource Group, and resources that exist in the target Resource Group that are not defined by the template will be removed. Utilizing complete mode should be used only when specifically needed as this can result in resource loss.</p>
+
+<p> </p>
+<h2><strong>Azure Portal Resource Deployment</strong></h2>
+<p>One-time ARM Template deployments can be achieved by creating a new “Template deployment” resource within the Portal. It can be a valuable tool if we just want to test something out, but prevents us from easily redeploying, reusing, or managing our templates.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ResourceDeploymentNew.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Within the “Template deployment”, we can start with a sample or build our own custom template.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ResourceDeployment.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Here we can paste in the contents of our template, generally this consists of the “azuredeploy.json” contents.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ResourceDeploymentCode.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>After saving the template, we can input our parameters for the template deployment and then just click “Purchase” to deploy.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ResourceDeploymentParams.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2><strong>PowerShell</strong></h2>
+<p>For those comfortable with PowerShell, deploying templates via PS scripts is fairly easy and there are some great methods to handle template deployment via PowerShell.</p>
+
+<p>The first option is to utilize the “New-AzureRmResourceGroupDeployment” script which provides the ability to reference a template and parameters file to be deployed to Azure. We can even append “-Mode (complete or incremental)” to specify our desired deployment mode. In the following example, a mode is not specified, resulting in the use of “incremental” mode.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/deploymentStart.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>The previous script is fairly easy to use and doesn’t require much input, but there is another deployment script that provides much more flexiblity. Within the “Azure QuickStart Templates” repository, there’s a provided script <a href="https://github.com/Azure/azure-quickstart-templates/blob/master/Deploy-AzureResourceGroup.ps1">Deploy-AzureResourceGroup,</a> which will do things like validate the template prior to deployment and create a new Resource Group if the one referenced doesn’t exist.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/PowerShellDeployment.png" alt="image alt text" /></p>
+
+<p><img src="/cooperlutz.github.io/assets/img/PowerShellSuccess.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2><strong>Templates Blade</strong></h2>
+<p>The “Templates” blade within the Azure Portal is currently a preview feature that provides the ability to store, share, and deploy commonly used templates. This is a great method for easily creating common resources as an alternative to Azure Marketplace resources. For members of the team who aren’t working with ARM Templates on a regular basis but need to deploy a standardized resource, the Templates Blade is a great option. The biggest drawbacks of this method are the inability to easily nest or reference parameters files.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/templateBlade.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>When creating a new template, a name and description are provided to specify the templates purpose or additional details.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/addTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Now we’ll just paste in the code that’s stored in our “azuredeploy.json” file containing our resource definitions. We’ll click “OK” and “Add”.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/addTemplateCode.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>The template will show up under the Templates blade and is available for deployment.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/templateBladeTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>At the top of the Template, we’ll click the “Deploy” button.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/deployTemplateBladeTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>After clicking “Deploy”, we receive the friendly parameters page that will allow us to input the parameter values for deployment.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/templateBladeParameters.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2><strong>Visual Studio</strong></h2>
+<p>Visual Studio can be an extremely powerful tool for handling ARM Templates. We can develop, manage with source control, and deploy, our ARM Templates all within the same tool. The graphical interfaces used during the deployment process can help prevent copy/paste errors that may occur when deploying via PowerShell and we get the full value of specifying predefined parameter files.</p>
+
+<p>To deploy a template in Visual Studio, we’ll start by creating a new project.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSNewProject.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>The Azure Resource Group project type can be found under “Visual C#” &gt; “Cloud”. We’ll provide a name for our project and click “OK”.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSCreateProject.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>After creating our new project, a second interface will allow us to choose which template we’d like to start with. In this case, we already have the code we want to use so we’ll just choose “Blank Template”.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSProjectTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Now all we have to do is copy our template files into our new Visual Studio project. Once we have the template files added to the project, we can right-click on our Visual Studio project and click “Deploy”, and select “New…”.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSDeployTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>The deployment interface allows us to choose the Subscription, Resource Group, and our Template and Parameters file. This is a really nice feature when we have multiple parameters files stored in the project and want to easily select the appropriate parameters file rather than copy/pasting or typing them out into a PowerShell deployment script.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSDeployment.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2><strong>Deploy to Azure</strong></h2>
+<p>Azuredeploy.net is a great tool to easily deploy ARM Templates from a <em>public </em>GitHub repository to your Azure environment. Azuredeploy.net cannot be used for private GitHub repositories and for this reason doesn’t make sense for an organization’s use. However, this is great feature for publicly shared templates, allowing others to easily deploy a template into their own Azure environment. In this case, we can navigate to the <a href="https://github.com/cooperlutz/cooperscloud/tree/master/arm-templates/ntier-VM-AzureSQL">Cooper’s Cloud GitHub repository</a> and deploy this N-Tier template into any Azure Subscription with the click of a button.</p>
+
+<p>To add the “Deploy to Azure” button within a public GitHub repository, a README.md file is added to the repository containing the following string:</p>
+<pre>[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+![image alt text](/cooperlutz.github.io/assets/img/AzureDeploy.png)
+</pre>
+
+        <a class="button" href="/cooperlutz.github.io/2018/05/29/mastering-arm-templates-3.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/cooperlutz.github.io/2018/04/26/mastering-arm-templates-2.html">
+            Mastering ARM Templates Episode 1 - Development
+          </a>
+        </h1>
+        <p class="meta">
+          April 26, 2018
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>In the <a href="https://cooperscloud.tech/arm-templates-ep1/">previous episode</a>, we took a look at the ARM template schema, some of the tools that will help get you started in your ARM template journey, and deployed our first template. In this installation, we’ll take a deeper dive into some of the development methods and strategy.</p>
+<h2>Define Template Scope</h2>
+<p>Before developing a template, it’s important to define the scope of the template. In extreme cases, this could be the difference between the idea of an “infrastructure in a box” where you deploy a single template for your entire infrastructure vs. deploying separate templates for each resource type as you would in the Portal. Like most things, I think the best strategy is somewhere in the middle, and depends on your needs.</p>
+
+<p>Generally, a good start is to begin your scope at the Resource Group level (however, it is possible to deploy to multiple Resource Groups). Some other things to think about when scoping the template are the region, life-cycle, deployment frequency, resource types, and purpose, of the resources.</p>
+
+<p>For example, we may have an application that requires multiple Virtual Machines with separate roles. The architecture calls for 2 front-end servers, 2 application servers, and 2 back-end servers. You <em>could</em> deploy all 6 servers with a single template, but that could get convoluted and doesn’t provide the flexibility to easily redeploy a single tier. In this case, we can scope the templates to the tier level and separate out the 3 tiers into 3 templates.</p>
+<h2>Define Resource Property Values</h2>
+<p>With the template scope defined, the next step is to define the resource property values. These are the settings applied to Azure resources, like a Virtual Network’s address space, or a Virtual Machine’s OS.</p>
+
+<p>Parameters can be used to define values that can change between deployments. The more parameters defined, the more dynamic the template becomes. Resource names are a great example of values that are generally set as parameters.</p>
+
+<p>Variables can be used to reference hard-coded values that can be used multiple times throughout the template and are not going to change throughout deployments. However, defining a resource property as a variable allows us to easily change the value at a later point in time if needed.</p>
+
+<p>Hard-coded values can be used to define settings that are not changing between deployment and are not going to change.</p>
+<h2>Define a Folder Structure</h2>
+<p>Determining an organized folder structure can be extremely valuable when developing your templates. As you start digging into more complex templates with multiple references, it’s easy to lose track of your files and end up with code sprawl.</p>
+
+<p>Generally, I start by creating a root folder with a name that specifies the purpose of the template.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/rootfolder.png" alt="image alt text" /></p>
+
+<p>Inside the root folder, I place the template “azuredeploy.json” file, along with dedicated folders for the additional files that will be referenced by the template.  The “parameters” folder for instance, contains any of the parameters files that are used to deploy the template. Multiple sets of parameters files can be stored inside this folder for separate deployments.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ARMTemplateFolderStructure.png" alt="image alt text" /></p>
+<h2>Understanding ARM API Versions</h2>
+<p>Each resource defined in a template contains an API version reference . Understanding how Azure manages these API versions can save you a lot of headache. Azure releases new API versions that include the latest features or settings available for a resource. However, it’s important to note that when a new API version is released, only certain Azure resources will be included in the release. This means that we can’t just grab the latest API version available and use that value for every resource in the template. It’s important to keep track of these API releases and ensure that templates are kept up to date.</p>
+
+<p>The Azure team maintains a public GitHub repository of the ARM API versions available.</p>
+
+<p><a href="https://github.com/Azure/azure-resource-manager-schemas/tree/master/schemas">https://github.com/Azure/azure-resource-manager-schemas/tree/master/schemas</a></p>
+
+<p>Additionally, you can download the deployment schema from the link below and search for the specific resource type and API versions available for that resource.</p>
+
+<p><a href="https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json">https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json</a></p>
+
+<p> </p>
+<h2>Development Scenario and Methods</h2>
+<p>There are multiple options for developing templates. To demonstrate these options, we’ll create an ARM template to deploy the following architecture. In this example we’re assuming that we have a server based web application that will utilize an Azure SQL database at the data tier.</p>
+
+<p> </p>
+
+<p><img src="/cooperlutz.github.io/assets/img/architecture.png" alt="image alt text" /></p>
+<h4></h4>
+<h4>QuickStart Templates</h4>
+<p>We’ll start by browsing to the Azure QuickStart Template repository that’s hosted on GitHub. From here, we can search through sample templates for one that suits our needs. One of the sample templates available (shown below) will serve as a great starting point will account for the web application server.</p>
+
+<p>Browse to the following location and download the “azuredeploy.json” and “azuredeploy.parameters.json” files.</p>
+
+<p><a href="https://github.com/Azure/azure-quickstart-templates/tree/master/101-1vm-2nics-2subnets-1vnet">https://github.com/Azure/azure-quickstart-templates/tree/master/101-1vm-2nics-2subnets-1vnet</a></p>
+
+<p><img src="/cooperlutz.github.io/assets/img/azurequickstart.png" alt="image alt text" /></p>
+<h4>Azure Generated Automation Script Templates</h4>
+<p>With our web application server taken care of, we need to add in our SQL Server and Database. For these two components, we’ll download the Automation Script template that Azure generates for existing resources.</p>
+
+<p>We’ll start by provisioning an Azure SQL instance within the portal.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/createSQLdb.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Once the SQL deployment is complete, we’ll navigate to the SQL Database resource and browse to the “Automation Script” blade. It’s important to note that the Automation Script will consist of all resources within the same Resource Group.</p>
+
+<p>At the top of the Automation Script blade, we can download the template files to our local machine.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/downloadSQLtemplate.png" alt="image alt text" /></p>
+
+<p>The downloaded template contains a number of reference files:</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ARMtemplatedownloadfiles.png" alt="image alt text" /></p>
+
+<p>deploy.ps1 - PowerShell deployment script</p>
+
+<p>deploy.sh - <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest">Azure CLI</a> deployment script</p>
+
+<p>deployer.rb - <a href="https://github.com/Azure/azure-sdk-for-ruby">Azure Ruby SDK</a> deployment script</p>
+
+<p>DeploymentHelper.cs - C# class to deploy the template</p>
+
+<p>parameters.json - parameters file for the deployment</p>
+
+<p>template.json - core template file containing all of the resources to be deployed</p>
+
+<p>For now, all we’re going to need from these files are: parameters.json and template.json.</p>
+<h4>Stitching the Templates Together</h4>
+<p>Now we need add the Azure SQL components into our template.</p>
+
+<p>When we open up the <a href="https://gist.github.com/cooperlutz/cbf4cfbeee48aa3ea2ba72b467c313f1">downloaded template</a>, we find that it consists of a number of resources outside of the Azure SQL Server and Database. In this case these resources include some of the Azure SQL settings that are provided by default and weren’t necessarily defined when we created the database in the Portal. For our purposes, we’ll remove all the resources and parameters outside of the SQL Server and Database. Then we can just copy/paste these sections into our existing template.</p>
+
+<p> </p>
+<h4>Template Reference Documentation</h4>
+<p>It’s just about time to test our template but let’s validate our downloaded template against the reference documentation. Navigate to the Azure reference documentation (found <a href="https://docs.microsoft.com/en-us/azure/templates/">here</a>) and browse under the “Reference” section to find SQL &gt; Servers. In comparing the downloaded Automation Script template to the reference documentation, we notice that the ”administratorLoginPassword” setting is missing from our template. Since the Automation Script does not download the secure string value, the setting is omitted from the downloaded template. It’s imperative to set a password on the database, so we’ll add this property into our template.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/sqlserver-downloaded.png" alt="image alt text" /></p>
+
+<p><img src="/cooperlutz.github.io/assets/img/SQLServertemplatereference.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Currently, our template consists of the Azure QuickStart Virtual Network, Subnets, Virtual Machine, Network Interfaces, and the Automation Script downloaded SQL Server and Database which we validated against the template reference documentation. Let’s take a look at this template and deploy it into Azure.</p>
+
+<p><a href="https://github.com/cooperlutz/cooperscloud/tree/master/arm-templates/ntier-VM-AzureSQL">https://github.com/cooperlutz/cooperscloud/tree/master/arm-templates/ntier-VM-AzureSQL</a></p>
+
+<p>We have all of the components accounted for - as laid out in our diagram - so let’s try deploying it:</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/deploymentStart.png" alt="image alt text" /></p>
+<h2>Success!</h2>
+<p>Our template deployed successfully. Now we can take a look at our Resource Group in the Azure Portal and find that it consists of all the resources defined in our architecture.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/deploymentSuccess.png" alt="image alt text" /></p>
+
+        <a class="button" href="/cooperlutz.github.io/2018/04/26/mastering-arm-templates-2.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+  </div>
+
+  
+  <div class="pagination">
+    
+    
+    <a href="/cooperlutz.github.io/blog/page2" class="button" >
+      Next
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    
+  </div>
+  
+</div>
+
+    </div>
+    
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

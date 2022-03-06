@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Azure AD, Azure AD DS, & AD DS on Azure | Cooper's Cloud</title>
+	<meta name="description"
+		content="What are these different services? When should we use one versus the other? Do they provide similar capabilities? There are a number of identity options with...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/cooperlutz.github.io/2019/04/09/azuread-aadds-adds.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
+		href="/cooperlutz.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+		integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+		integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+		crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/cooperlutz.github.io/">
+			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/cooperlutz/cooperscloud" title="Follow on GitHub">
+		<i class="fab fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/cooperlutz.github.io/')">
+    <h1 class="title">Azure AD, Azure AD DS, & AD DS on Azure</h1>
+    
+    <p class="meta">
+      April 9, 2019
+      
+    </p>
+  </header>
+  <section class="post-content"><p>What are these different services? When should we use one versus the other? Do they provide similar capabilities? There are a number of identity options within Azure and its easy to confuse the purposes and capabilities of each solution.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/AADDS_AAD_ADDS_Architecture-1024x538.png" alt="image alt text" /></p>
+
+<!-- wp:heading {"level":3} -->
+<h3>Azure AD</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Many organizations today are already utilizing Azure AD and may not even realize it. Azure AD by default is a cloud based domain service that provides the ability to create and manage users and groups and provide access to Azure or Office 365. In the context of Azure, Azure AD is utilized in conjunction with Azure RBAC to control user access to different Subscriptions and Resources within Azure. Azure AD is almost a given today and is utilized <strong>in addition to Active Directory Domain Services, not as a replacement.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>AD DS on Azure</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Here I'm referring to AD DS (Active Directory Domain Services) running on Azure Virtual Machines, a service which should be a very familiar to most organizations. There are a few things to take into consideration when configuring Domain Controllers within Azure but overall the service itself behaves exactly the same as it would with your existing Domain Services. For a brand new Azure deployment, AD DS Domain Controller Virtual Machines are typically one of the first workloads to deploy. This comes down to treating Azure as an extension of your data center and providing Domain Service capabilities to your Azure workloads in the event that the connection back to your data center is dropped and to ensure that Azure workloads aren't having to traverse an ExpressRoute or VPN connection every single time they need to check into the domain. AD DS on Azure is almost a given for organizations that are already reliant on AD DS. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Azure AD DS</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Azure AD Domain Services is a newer feature available within Azure that provides managed domain as a service capabilities. Think of it as PaaS version of Domain Controllers. Sounds really nice, right? A word of caution, as this service can trip you up if you don't utilize it correctly. It is important to remember - <strong>Azure AD DS is NOT a replacement or extension of your existing domain. </strong>Although it would be really nice to never have to build Domain Controller VMs in Azure, that is not realistic at this point in time for most organizations.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So what is Azure AD DS? Azure AD Domain Services is a domain service that synchronizes Azure AD users, groups, and passwords, to a managed service available to Azure Virtual Machines. Once available, Virtual Machines can be joined to the managed domain and utilize Group Policy, users, and group membership similar to traditional Active Directory Domain Services.<br />Users, Groups, and Passwords are synchronized from Azure Active Directory to the managed domain instance, but <strong>group policy is not synchronized.</strong><br /></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li>Only one instance of Azure AD DS can be deployed per Azure AD Tenant (no multi-region deployments)</li><li>Azure AD DS is highly available within each instance</li><li>Azure AD DS is a separate domain, but can be synchronized with your existing domain</li><li>Group Policy is not synchronized to Azure AD DS</li><li>Group Policy Objects can be created within Azure AD DS</li><li>Domain and Enterprise admin capabilities are not available for Azure AD DS</li><li>Azure AD password hash synchronization is required for Azure AD DS</li><li>Azure AD users and groups are synchronized to Azure AD DS</li></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Example Scenario</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In the following graphic portrays how each identity service may be utilized in a scenario of managing a single Azure Windows Virtual Machine.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/Azure_DS_Scenarios-1024x504.png" alt="image alt text" /></p>
+
+<!-- wp:paragraph -->
+<p>In this scenario, the Windows VM can be joined to either AD DS domain or my Azure AD DS domain, but not both. The option to join a Virtual Machine to one of these domains is one or the other situation.</p>
+<!-- /wp:paragraph -->
+
+<p><img src="/cooperlutz.github.io/assets/img/ADDS_AADDS_diagram-1024x485.png" alt="image alt text" /></p>
+
+<!-- wp:heading -->
+<h2>What do we do?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>With this information, the solution that makes sense for most organizations includes deploying AD DS Domain Controllers on Azure and utilizing Azure AD synchronization to manage resources and users within the Azure Portal. Azure AD DS is a great service but should be used for a specific use case.</p>
+</section>
+  
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

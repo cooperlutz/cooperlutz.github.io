@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Cortana Skills and Azure | Cooper's Cloud</title>
+	<meta name="description"
+		content="I received a “virtual assistant” as a gift this year and while I enjoy listening to music and quickly checking the weather forecast (spoiler: its always cold...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/cooperlutz.github.io/2018/03/14/cortana-and-azure.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
+		href="/cooperlutz.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+		integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+		integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+		crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/cooperlutz.github.io/">
+			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/cooperlutz/cooperscloud" title="Follow on GitHub">
+		<i class="fab fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/cooperlutz.github.io/')">
+    <h1 class="title">Cortana Skills and Azure</h1>
+    
+    <p class="meta">
+      March 14, 2018
+      
+    </p>
+  </header>
+  <section class="post-content"><p>I received a “virtual assistant” as a gift this year and while I enjoy listening to music and quickly checking the weather forecast (spoiler: its always cold in Chicago), I love the idea of bringing the virtual assistant into the workplace. This week I decided to build learn more about building custom “Skills” and decided to put this to the test with Cortana and Azure administration.</p>
+
+<p>I quickly came across the <a href="https://developer.microsoft.com/en-us/cortana">Cortana Dev Center</a>, which provides an easy to use language and tool-set to develop Cortana skills. Rather than using C# or other programming language, Cortana Dev Center Skills are programmed using Semantic Composition Language (SCL). This is a great introductory programming language because its easy to read and understand.</p>
+
+<p>Here’s a quick high-level architecture of what we’ll be deploying:</p>
+
+<p><img class="alignnone wp-image-229" src="/assets/img/CortanaDiagram.png" alt="" width="584" height="419" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2>The Scenario</h2>
+<p>As someone who spends most of my days living inside the Azure portal, I thought it would be great if I could delegate some of my tasks to Cortana. I figured it would be cool if I could just ask Cortana to “fix this error”, but decided to set my sights a little lower…</p>
+
+<p>So I imagined myself in the middle of lunch and receiving an email that I need to restart a VM ASAP. I pictured myself running to my computer, logging into Azure, finding the VM, performing a restart, confirming the machine comes back up, and then moving on, fairly simple process that takes maybe 5-10 minutes out of my lunch? But what if I could do it in 10 seconds…..</p>
+
+<p> </p>
+<h2>Create a Cortana Skill to Restart an Azure VM</h2>
+<h4>Create a new Cortana Botlet</h4>
+<p>Start by signing into the <a href="https://developer.microsoft.com/en-us/cortana">Cortana Dev Center</a> and create a new Cortana Skill. Follow the steps provided and fill out the information requested.</p>
+
+<p><img class="alignnone wp-image-226" src="/assets/img/SkillStep1.png" alt="" width="480" height="309" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p><img class="alignnone wp-image-227" src="/assets/img/SkillStep2.png" alt="" width="480" height="401" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p><img class="alignnone wp-image-228" src="/assets/img/SkillStep3.png" alt="" width="480" height="451" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+<h4>Add the Botlet code</h4>
+<p>Add the Code that will control the Skill. The code I created can be found here:</p>
+
+<p><a href="https://github.com/cooperlutz/cooperscloud/blob/master/cortana-scl/botlet.txt">https://github.com/cooperlutz/cooperscloud/blob/master/cortana-scl/botlet.txt</a></p>
+
+<p> </p>
+<h4>Add a new Runbook to your Azure Automation Account</h4>
+<p>Add a new Runbook to your Automation Account</p>
+
+<p><img class="alignnone wp-image-213" src="/assets/img/CreateRunbook-1.png" alt="" width="574" height="301" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p>Paste the Runbook code from here:</p>
+
+<p><a href="https://github.com/cooperlutz/cooperscloud/blob/master/powershell-scripts/WebhookRunbook.ps1">https://github.com/cooperlutz/cooperscloud/blob/master/powershell-scripts/WebhookRunbook.ps1</a></p>
+
+<p> </p>
+<h4>Create the Runbook Webhook</h4>
+<p>From within the Runbook, navigate to the Webhook and Create a New webhook. Give your webhook a name, and expiration. The URL will be autogenerated.</p>
+
+<p><img class="alignnone wp-image-214" src="/assets/img/RunbookWebhook.png" alt="" width="577" height="524" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+<h4>Add a new botlet service</h4>
+<p>Add a new service to the botlet solution</p>
+
+<p><img class="alignnone wp-image-219" src="/assets/img/CortanaService1.png" alt="" width="480" height="468" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Add a description to the service and an image if desired</p>
+
+<p><img class="alignnone wp-image-215" src="/assets/img/CortanaService2.png" alt="" width="480" height="397" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Choose the “I have a web service” option, and paste the Runbook Webhook URL. You’ll need to remove the “?token=asdf….” portion, but make sure you save that portion for the next step.</p>
+
+<p><img class="alignnone wp-image-216" src="/assets/img/CortanaService3.png" alt="" width="480" height="431" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Update the Webhook URL to include the “?token=asdf1234…..”</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Add an action to the Service.</p>
+
+<p><img class="alignnone size-full wp-image-221" src="/assets/img/CortanaServiceAction.png" alt="" width="2152" height="360" />
+<img src="/cooperlutz.github.io/assets/img/MultiP2SDiagram.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Add the Action Parameters, in this case, VM name.</p>
+
+<p><img class="alignnone size-full wp-image-222" src="/assets/img/CortanaActionParam.png" alt="" width="2164" height="719" />
+<img src="/cooperlutz.github.io/assets/img/MultiP2SDiagram.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Test the solution by chatting with Cortana.</p>
+
+<p><img class="alignnone wp-image-223" src="/assets/img/CortanaChat.png" alt="" width="644" height="755" />
+<img src="/cooperlutz.github.io/assets/img/MultiP2SDiagram.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Sorry something went wrong? I spent about 20 minutes chasing this error before I realized that the Runbook was in fact executing and I seemed to be receiving a false positive. I believe the error was due to the Webhook not sending a result back.</p>
+
+<p>Here we see the output of our Runbook</p>
+
+<p><img class="alignnone size-full wp-image-224" src="/assets/img/RunbookOutput.png" alt="" width="1284" height="568" />
+<img src="/cooperlutz.github.io/assets/img/MultiP2SDiagram.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Success!</p>
+
+<p><img class="alignnone size-full wp-image-225" src="/assets/img/SUCCESS.png" alt="" width="1041" height="52" />
+<img src="/cooperlutz.github.io/assets/img/MultiP2SDiagram.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2>Next Steps</h2>
+<p>Azure <a href="https://azure.microsoft.com/en-us/services/bot-service/">Bot Services</a> resources are available to deploy more robust chat bots as an Azure Web App or Azure Function.</p>
+</section>
+  
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

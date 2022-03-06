@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Mastering ARM Templates Episode 1 - The Basics | Cooper's Cloud</title>
+	<meta name="description"
+		content="Getting Started with ARM TemplatesI’ve spent a considerable amount of time developing ARM Templates and have been working to put together a series of posts t...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/cooperlutz.github.io/2018/04/03/mastering-arm-templates-1.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
+		href="/cooperlutz.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+		integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+		integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+		crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/cooperlutz.github.io/">
+			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/cooperlutz/cooperscloud" title="Follow on GitHub">
+		<i class="fab fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/cooperlutz.github.io/')">
+    <h1 class="title">Mastering ARM Templates Episode 1 - The Basics</h1>
+    
+    <p class="meta">
+      April 3, 2018
+      
+    </p>
+  </header>
+  <section class="post-content"><h2>Getting Started with ARM Templates</h2>
+<p>I’ve spent a considerable amount of time developing ARM Templates and have been working to put together a series of posts to help you master ARM Templates, whether you’re just getting started with Azure or have been developing ARM Templates since their inception. Beyond simplifying your deployments, you can learn so much about Azure’s inner workings and more complex features through ARM Template development.</p>
+
+<p> </p>
+
+<p>ARM Templates are Azure’s built-in infrastructure-as-code (IAC) toolset. This means that I can create or modify resources within Azure (Virtual Machines, Virtual Networks, etc.) by creating a configuration file and letting Azure handle the provisioning. ARM Templates enable you to create consistent and repeatable deployments within your Azure environment.</p>
+
+<p> </p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ARMTemplateDiagram.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2>ARM Templates Basics</h2>
+<p>ARM Templates are defined using JSON (JavaScript Object Notation), a structured language that consists of data referenced as name/value pairs, stored as objects. Let’s take a look at some of the components that make up an ARM Template (click image to enlarge).</p>
+
+<p> </p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ARMTemplate-Visual.png" alt="image alt text" /></p>
+
+<p> </p>
+<h4>ARM Template Resources</h4>
+<p>https://github.com/Azure/azure-quickstart-templates</p>
+
+<p>The Azure team has provided a public GitHub repository with a number of reference ARM Templates to get you started. This is where I always start when developing a new template.</p>
+
+<p> </p>
+<h4>Development Tools</h4>
+<p><strong><a href="https://code.visualstudio.com/">Visual Studio Code</a></strong></p>
+
+<p>VS Code is a light-weight editor that’s perfect for developing ARM Templates. VS Code has built-in integrations with  This is my recommended tool for a large majority of your ARM Templating needs, and one of my favorite features is the ability to auto-format JSON!</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSCode_Formatting.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p><strong><a href="https://www.visualstudio.com/">Visual Studio</a></strong></p>
+
+<p>Visual Studio has built-in auto-formatting and some other great features for helping develop and deploy complex ARM Templates. Using Visual Studio can be overwhelming for getting started but I will provide plenty of information and resources about Visual Studio in the coming weeks.</p>
+
+<p> </p>
+
+<p><strong><a href="http://armviz.io">Armviz.io</a></strong></p>
+
+<p>Armviz is a browser-based ARM Template development tool. Armviz has a fairly decent feature that allows you to generate a design view of the Azure resources inside your template. Big catch for this tool, its a Public project hosted on GitHub that hasn’t been updated in a couple years. I’ll use this tool for quick and simple templates sometimes, but don’t recommend it for every day use.</p>
+
+<p> </p>
+
+<p><strong>Version Control Tools -</strong> <strong><a href="https://github.com/">GitHub</a>, <a href="https://www.visualstudio.com/team-services/">VSTS</a>, <a href="https://bitbucket.org">Bitbucket</a></strong></p>
+
+<p>Using a version control service is the recommended method of storing ARM Template code. If you don’t have much of a development background these tools can take some getting used to, so I wouldn’t worry about them too much when getting started.</p>
+
+<p> </p>
+<h4>Deployment Options</h4>
+<p><strong>Azure Portal resource deployment</strong> - within Azure you’re able to perform a one-time deployment of an ARM Template by creating a new resource “Template deployment”.</p>
+
+<p><strong>PowerShell</strong> - the AzureRM PowerShell modules have a “New-AzureRMResourceGroupDeployment” command to deploy templates.</p>
+
+<p><strong>Templates Blade</strong> - the Azure Portal has a “Templates” blade that allows you to store your templates within Azure and easily deploy.</p>
+
+<p><strong>Visual Studio</strong> - one of the value propositions for using Visual Studio to develop ARM Templates is the ability to deploy your template directly to Azure.</p>
+
+<p><strong>Deploy to Azure</strong> - azuredeploy.net is a great tool to easily deploy ARM Templates from a <em>public </em>GitHub repository to your Azure environment. Azuredeploy.net cannot be used for Private GH repositories.</p>
+
+<p> </p>
+<h2>First ARM Template</h2>
+<p>We’ll start with an ARM Template that creates a new VNet with 2 Subnets.</p>
+
+<p>To start, log into Azure and then browse to the following link:</p>
+
+<p><a href="https://github.com/cooperlutz/cooperscloud/tree/master/arm-templates/network-VNet">https://github.com/cooperlutz/cooperscloud/tree/master/arm-templates/network-VNet</a></p>
+
+<p> </p>
+<h4>Deploy to Azure</h4>
+<p>Click the Blue “Deploy to Azure button” provided in the GitHub link.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/deploytoAzure.png" alt="image alt text" /></p>
+
+<p> </p>
+<h4>Configure Settings</h4>
+<ul>
+ 	<li>Directory and Subscription should refer to your Azure account information. This will be auto-populated since you're already logged in.</li>
+ 	<li>Resource Group - you may choose to use an existing Resource Group, or "Create New"  and provide a "Resource Group Name" if you don't already have one in your subscription.</li>
+ 	<li>Virtual Network name - this is auto-populated using then "Default Value" in our template, seen here:</li>
+</ul>
+<p><img src="/cooperlutz.github.io/assets/img/defaultvalue.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>After filling out the settings, click “Next”</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VNetTemplateDeploy1.png" alt="image alt text" /></p>
+
+<p> </p>
+<h4>Click Deploy</h4>
+<p><img src="/cooperlutz.github.io/assets/img/VNetTemplateDeploy2.png" alt="image alt text" /></p>
+
+<p> </p>
+<h4>Deployment Complete</h4>
+<p>After the deployment has completed, click the “Manage” link or open your Azure Portal.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VNetTemplateDeploy3.png" alt="image alt text" /></p>
+
+<p> </p>
+<h4>Review Deployment in Azure Portal</h4>
+<p>Our Virtual Network has successfully been deployed to Azure. It contains the two subnets that our template defined, along with the proper network address spaces.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VNetTemplateDeployFinal.png" alt="image alt text" /></p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VNetTemplateDeploySubnets.png" alt="image alt text" /></p>
+</section>
+  
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Improve Subscription Management with Azure Management Groups | Cooper's Cloud</title>
+	<meta name="description"
+		content="Organizations and individuals often utilize multiple Subscriptions across their Azure environment. Depending on the needs of an organization, these may be sp...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/cooperlutz.github.io/2018/07/09/azure-management-groups.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
+		href="/cooperlutz.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+		integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+		integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+		crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/cooperlutz.github.io/">
+			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/cooperlutz/cooperscloud" title="Follow on GitHub">
+		<i class="fab fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/cooperlutz.github.io/')">
+    <h1 class="title">Improve Subscription Management with Azure Management Groups</h1>
+    
+    <p class="meta">
+      July 9, 2018
+      
+    </p>
+  </header>
+  <section class="post-content"><p>Organizations and individuals often utilize multiple Subscriptions across their Azure environment. Depending on the needs of an organization, these may be split up by department, life-cycle, business unit, etc., and result in one or hundreds of Azure Subscriptions. The more Azure Subscriptions we have, the more difficult it becomes to manage each Subscriptions access controls and Azure Policy, often resulting in Subscription sprawl. With the introduction of Azure Management Groups, we can now more effectively manage our Azure Subscriptions by grouping them into containers, similar to the way we group like Azure Resources into Resource Groups.</p>
+
+<p> </p>
+<h2>Azure Management Groups Scenario</h2>
+<p>To demonstrate Azure Management Groups, we will create the below hierarchy for our 3 Azure Subscriptions, which are segmented by life-cycle, Prod, Test, and Dev. In this case, we’ll create 2 Management Groups for “Prod” and “Testing”. We want to ensure that our Dev and Test Subscriptions have similar levels of access for our Developers, but we need to restrict Prod access.</p>
+
+<p><img class="alignnone size-full wp-image-400" src="assets/img/AzureManagementGroupDiagram.png" alt="" width="740" height="640" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+<h2>Azure Management Group Details</h2>
+<ul>
+ 	<li>Azure Management Groups can be assigned Access Controls and Azure Policies</li>
+ 	<li>Azure Policy and access controls assigned to a Management Group are inherited by child Subscriptions and Management Groups</li>
+ 	<li>A Subscription can be assigned to 1 Management Group</li>
+ 	<li>Management Groups can be renamed</li>
+ 	<li>Management Groups can contain multiple Subscriptions and/or Management Groups</li>
+ 	<li>Management Groups can be moved to other Management Groups</li>
+ 	<li>New Subscriptions are assigned to the Tenant Root Group</li>
+</ul>
+<p> </p>
+<h2>Creating Our Azure Management Group Hierarchy</h2>
+<p>To start building our Management Group hierarchy, we’ll begin by navigating to the “Management Groups” blade.</p>
+
+<p><img class="alignnone size-full wp-image-404" src="assets/img/managementGroupsBlade.png" alt="" width="491" height="161" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>We’ll start by enabling Azure Management Groups which will also create our “Tenant Root Group”, the root or highest level Management Group.</p>
+
+<p> </p>
+
+<p><img class="alignnone wp-image-414" src="assets/img/enableManagementGroups.png" alt="" width="608" height="260" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2>Create Azure Management Groups</h2>
+<p>Now we can create our child Management Groups. We’ll create 2 Management Groups per our above hierarchy, “Prod” and “Testing”.</p>
+
+<p><img class="alignnone size-full wp-image-415" src="assets/img/addManagementGroup.png" alt="" width="457" height="127" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Our Management Groups are made up of a name and ID. We will correlate these names and IDs to our “Prod” and “Testing” environments.</p>
+
+<p><img class="alignnone size-full wp-image-405" src="assets/img/prodMG.png" alt="" width="424" height="340" />             <img class="alignnone wp-image-406" src="assets/img/testMG.png" alt="" width="399" height="342" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2>Assign Subscriptions to Azure Management Groups</h2>
+<p>With both of our Management Groups created, we need to assign our Subscriptions to our Management Groups. Under our “Testing” Management Group, we’ll click on the “(details)” link.</p>
+
+<p><img class="alignnone wp-image-416" src="assets/img/addSubscription1-1.png" alt="" width="685" height="182" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Within our “Testing” Management Group, we can assign access control, Azure Policy and assign any child Management Groups or Subscriptions. We’ll click on the “+ Add subscription” button to assign our “Dev” and “Test” Subscriptions.</p>
+
+<p><img class="alignnone size-full wp-image-408" src="assets/img/addSubscription2.png" alt="" width="1131" height="328" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>A drop-down will allow us to choose from our list of available Subscriptions.</p>
+
+<p><strong>IMPORTANT NOTE: </strong>Existing access controls assigned to our Subscription will be removed once assigned to the new Management Group. Therefore, if we are migrating any subscriptions to this new model, we want to first assign their existing permissions set at the Subscription level, to the Management Group level. When migrating to Azure Management Groups, we want to ensure that we don’t lose any permissions.</p>
+
+<p><img class="alignnone size-full wp-image-411" src="assets/img/addSubscription3-2.png" alt="" width="424" height="473" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>We’ll copy this same process with our remaining Subscriptions and we’ve now successfully created our defined Management Group hierarchy.</p>
+
+<p><img class="alignnone size-full wp-image-421" src="assets/img/completeMG.png" alt="" width="935" height="470" />
+<img src="/cooperlutz.github.io/assets/img/UpdateWebhook1.png" alt="image alt text" /></p>
+</section>
+  
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

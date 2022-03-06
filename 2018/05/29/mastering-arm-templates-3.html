@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Mastering ARM Templates Episode 3 - Deployment | Cooper's Cloud</title>
+	<meta name="description"
+		content="In previous episodes we took a look at the basics of ARM Templates, and some of the methods of developing ARM Templates. In this installation, we’ll take a l...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/cooperlutz.github.io/2018/05/29/mastering-arm-templates-3.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
+		href="/cooperlutz.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+		integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+		integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+		crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/cooperlutz.github.io/">
+			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled  -->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/cooperlutz/cooperscloud" title="Follow on GitHub">
+		<i class="fab fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Search bar -->
+            
+		</ul>
+	</nav>
+
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/cooperlutz.github.io/')">
+    <h1 class="title">Mastering ARM Templates Episode 3 - Deployment</h1>
+    
+    <p class="meta">
+      May 29, 2018
+      
+    </p>
+  </header>
+  <section class="post-content"><p>In previous episodes we took a look at the <a href="https://cooperscloud.tech/arm-templates-ep1/">basics of ARM Templates</a>, and some of the methods of <a href="https://cooperscloud.tech/arm-templates-ep2/">developing ARM Templates</a>. In this installation, we’ll take a look at common deployment options.</p>
+<h2>Deployment Strategy</h2>
+<p>When it comes to determining a standard deployment strategy for ARM Templates, there are a number of options, but the goal is to choose a strategy that fits the audience and situation. In certain circumstances it might make sense to mix and match these options to fit our overall deployment strategy.</p>
+
+<p>To help with this decision, I’ve created a flowchart based on my own experiences and personal opinions:</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ARMTemplateDecisionFlowchart.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2>Deployment Concepts</h2>
+<h4>Resource Groups</h4>
+<p>Templates are always deployed <em>to</em> a Resource Group, and Resource Groups cannot be created via ARM Templates. This means that the target Resource Group must exist prior to template deployment.</p>
+
+<p> </p>
+<h4>Template Validation</h4>
+<p>Prior to deploying a template, we can validate the template code to ensure there are no syntax errors or missing values. This is done by default when deploying templates through the Azure portal, but this can also be done via PowerShell.</p>
+<pre><a href="https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/test-azurermresourcegroupdeployment?view=azurermps-6.1.0">Test-Azure<wbr />RmResource<wbr />Group<wbr />Deployment</a>
+</pre>
+<p> </p>
+<h4>Deployment Mode</h4>
+<p>Templates can be deployed in “incremental” or “complete” modes. The default deployment mode is incremental, specifying that the resources deployed to the target Resource Group are incremental changes or additions to the Resource Group. In contrast, when deploying in complete mode, we are specifying that the template deployment is the desired final state for the target Resource Group, and resources that exist in the target Resource Group that are not defined by the template will be removed. Utilizing complete mode should be used only when specifically needed as this can result in resource loss.</p>
+
+<p> </p>
+<h2><strong>Azure Portal Resource Deployment</strong></h2>
+<p>One-time ARM Template deployments can be achieved by creating a new “Template deployment” resource within the Portal. It can be a valuable tool if we just want to test something out, but prevents us from easily redeploying, reusing, or managing our templates.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ResourceDeploymentNew.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Within the “Template deployment”, we can start with a sample or build our own custom template.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ResourceDeployment.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Here we can paste in the contents of our template, generally this consists of the “azuredeploy.json” contents.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ResourceDeploymentCode.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>After saving the template, we can input our parameters for the template deployment and then just click “Purchase” to deploy.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/ResourceDeploymentParams.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2><strong>PowerShell</strong></h2>
+<p>For those comfortable with PowerShell, deploying templates via PS scripts is fairly easy and there are some great methods to handle template deployment via PowerShell.</p>
+
+<p>The first option is to utilize the “New-AzureRmResourceGroupDeployment” script which provides the ability to reference a template and parameters file to be deployed to Azure. We can even append “-Mode (complete or incremental)” to specify our desired deployment mode. In the following example, a mode is not specified, resulting in the use of “incremental” mode.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/deploymentStart.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>The previous script is fairly easy to use and doesn’t require much input, but there is another deployment script that provides much more flexiblity. Within the “Azure QuickStart Templates” repository, there’s a provided script <a href="https://github.com/Azure/azure-quickstart-templates/blob/master/Deploy-AzureResourceGroup.ps1">Deploy-AzureResourceGroup,</a> which will do things like validate the template prior to deployment and create a new Resource Group if the one referenced doesn’t exist.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/PowerShellDeployment.png" alt="image alt text" /></p>
+
+<p><img src="/cooperlutz.github.io/assets/img/PowerShellSuccess.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2><strong>Templates Blade</strong></h2>
+<p>The “Templates” blade within the Azure Portal is currently a preview feature that provides the ability to store, share, and deploy commonly used templates. This is a great method for easily creating common resources as an alternative to Azure Marketplace resources. For members of the team who aren’t working with ARM Templates on a regular basis but need to deploy a standardized resource, the Templates Blade is a great option. The biggest drawbacks of this method are the inability to easily nest or reference parameters files.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/templateBlade.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>When creating a new template, a name and description are provided to specify the templates purpose or additional details.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/addTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Now we’ll just paste in the code that’s stored in our “azuredeploy.json” file containing our resource definitions. We’ll click “OK” and “Add”.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/addTemplateCode.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>The template will show up under the Templates blade and is available for deployment.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/templateBladeTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>At the top of the Template, we’ll click the “Deploy” button.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/deployTemplateBladeTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>After clicking “Deploy”, we receive the friendly parameters page that will allow us to input the parameter values for deployment.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/templateBladeParameters.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2><strong>Visual Studio</strong></h2>
+<p>Visual Studio can be an extremely powerful tool for handling ARM Templates. We can develop, manage with source control, and deploy, our ARM Templates all within the same tool. The graphical interfaces used during the deployment process can help prevent copy/paste errors that may occur when deploying via PowerShell and we get the full value of specifying predefined parameter files.</p>
+
+<p>To deploy a template in Visual Studio, we’ll start by creating a new project.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSNewProject.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>The Azure Resource Group project type can be found under “Visual C#” &gt; “Cloud”. We’ll provide a name for our project and click “OK”.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSCreateProject.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>After creating our new project, a second interface will allow us to choose which template we’d like to start with. In this case, we already have the code we want to use so we’ll just choose “Blank Template”.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSProjectTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>Now all we have to do is copy our template files into our new Visual Studio project. Once we have the template files added to the project, we can right-click on our Visual Studio project and click “Deploy”, and select “New…”.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSDeployTemplate.png" alt="image alt text" /></p>
+
+<p> </p>
+
+<p>The deployment interface allows us to choose the Subscription, Resource Group, and our Template and Parameters file. This is a really nice feature when we have multiple parameters files stored in the project and want to easily select the appropriate parameters file rather than copy/pasting or typing them out into a PowerShell deployment script.</p>
+
+<p><img src="/cooperlutz.github.io/assets/img/VSDeployment.png" alt="image alt text" /></p>
+
+<p> </p>
+<h2><strong>Deploy to Azure</strong></h2>
+<p>Azuredeploy.net is a great tool to easily deploy ARM Templates from a <em>public </em>GitHub repository to your Azure environment. Azuredeploy.net cannot be used for private GitHub repositories and for this reason doesn’t make sense for an organization’s use. However, this is great feature for publicly shared templates, allowing others to easily deploy a template into their own Azure environment. In this case, we can navigate to the <a href="https://github.com/cooperlutz/cooperscloud/tree/master/arm-templates/ntier-VM-AzureSQL">Cooper’s Cloud GitHub repository</a> and deploy this N-Tier template into any Azure Subscription with the click of a button.</p>
+
+<p>To add the “Deploy to Azure” button within a public GitHub repository, a README.md file is added to the repository containing the following string:</p>
+<pre>[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+![image alt text](/cooperlutz.github.io/assets/img/AzureDeploy.png)
+</pre>
+</section>
+  
+
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
