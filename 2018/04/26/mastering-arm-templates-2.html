@@ -8,17 +8,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css">
 
 	<!--Favicon-->
-	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/cooperlutz.github.io/2018/04/26/mastering-arm-templates-2.html">
+	<link rel="canonical" href="/2018/04/26/mastering-arm-templates-2.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
-		href="/cooperlutz.github.io/feed.xml" />
+		href="/feed.xml" />
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -47,12 +47,12 @@
     <header class="site-header">
 	<div class="branding">
 		
-		<a href="/cooperlutz.github.io/">
-			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		<a href="/">
+			<img class="avatar" src="/assets/img/CoopersCloudLogoColor.png" alt=""/>
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+			<a href="/">Cooper's Cloud</a>
 		</h1>
 	</div>
 	<nav class="site-nav">
@@ -136,7 +136,7 @@
 
     <div class="content">
       <article >
-  <header style="background-image: url('/cooperlutz.github.io/')">
+  <header style="background-image: url('/')">
     <h1 class="title">Mastering ARM Templates Episode 1 - Development</h1>
     
     <p class="meta">
@@ -164,11 +164,11 @@
 
 <p>Generally, I start by creating a root folder with a name that specifies the purpose of the template.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/rootfolder.png" alt="image alt text" /></p>
+<p><img src="/assets/img/rootfolder.png" alt="image alt text" /></p>
 
 <p>Inside the root folder, I place the template “azuredeploy.json” file, along with dedicated folders for the additional files that will be referenced by the template.  The “parameters” folder for instance, contains any of the parameters files that are used to deploy the template. Multiple sets of parameters files can be stored inside this folder for separate deployments.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/ARMTemplateFolderStructure.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ARMTemplateFolderStructure.png" alt="image alt text" /></p>
 <h2>Understanding ARM API Versions</h2>
 <p>Each resource defined in a template contains an API version reference . Understanding how Azure manages these API versions can save you a lot of headache. Azure releases new API versions that include the latest features or settings available for a resource. However, it’s important to note that when a new API version is released, only certain Azure resources will be included in the release. This means that we can’t just grab the latest API version available and use that value for every resource in the template. It’s important to keep track of these API releases and ensure that templates are kept up to date.</p>
 
@@ -186,7 +186,7 @@
 
 <p> </p>
 
-<p><img src="/cooperlutz.github.io/assets/img/architecture.png" alt="image alt text" /></p>
+<p><img src="/assets/img/architecture.png" alt="image alt text" /></p>
 <h4></h4>
 <h4>QuickStart Templates</h4>
 <p>We’ll start by browsing to the Azure QuickStart Template repository that’s hosted on GitHub. From here, we can search through sample templates for one that suits our needs. One of the sample templates available (shown below) will serve as a great starting point will account for the web application server.</p>
@@ -195,13 +195,13 @@
 
 <p><a href="https://github.com/Azure/azure-quickstart-templates/tree/master/101-1vm-2nics-2subnets-1vnet">https://github.com/Azure/azure-quickstart-templates/tree/master/101-1vm-2nics-2subnets-1vnet</a></p>
 
-<p><img src="/cooperlutz.github.io/assets/img/azurequickstart.png" alt="image alt text" /></p>
+<p><img src="/assets/img/azurequickstart.png" alt="image alt text" /></p>
 <h4>Azure Generated Automation Script Templates</h4>
 <p>With our web application server taken care of, we need to add in our SQL Server and Database. For these two components, we’ll download the Automation Script template that Azure generates for existing resources.</p>
 
 <p>We’ll start by provisioning an Azure SQL instance within the portal.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/createSQLdb.png" alt="image alt text" /></p>
+<p><img src="/assets/img/createSQLdb.png" alt="image alt text" /></p>
 
 <p> </p>
 
@@ -209,11 +209,11 @@
 
 <p>At the top of the Automation Script blade, we can download the template files to our local machine.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/downloadSQLtemplate.png" alt="image alt text" /></p>
+<p><img src="/assets/img/downloadSQLtemplate.png" alt="image alt text" /></p>
 
 <p>The downloaded template contains a number of reference files:</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/ARMtemplatedownloadfiles.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ARMtemplatedownloadfiles.png" alt="image alt text" /></p>
 
 <p>deploy.ps1 - PowerShell deployment script</p>
 
@@ -237,9 +237,9 @@
 <h4>Template Reference Documentation</h4>
 <p>It’s just about time to test our template but let’s validate our downloaded template against the reference documentation. Navigate to the Azure reference documentation (found <a href="https://docs.microsoft.com/en-us/azure/templates/">here</a>) and browse under the “Reference” section to find SQL &gt; Servers. In comparing the downloaded Automation Script template to the reference documentation, we notice that the ”administratorLoginPassword” setting is missing from our template. Since the Automation Script does not download the secure string value, the setting is omitted from the downloaded template. It’s imperative to set a password on the database, so we’ll add this property into our template.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/sqlserver-downloaded.png" alt="image alt text" /></p>
+<p><img src="/assets/img/sqlserver-downloaded.png" alt="image alt text" /></p>
 
-<p><img src="/cooperlutz.github.io/assets/img/SQLServertemplatereference.png" alt="image alt text" /></p>
+<p><img src="/assets/img/SQLServertemplatereference.png" alt="image alt text" /></p>
 
 <p> </p>
 
@@ -249,11 +249,11 @@
 
 <p>We have all of the components accounted for - as laid out in our diagram - so let’s try deploying it:</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/deploymentStart.png" alt="image alt text" /></p>
+<p><img src="/assets/img/deploymentStart.png" alt="image alt text" /></p>
 <h2>Success!</h2>
 <p>Our template deployed successfully. Now we can take a look at our Resource Group in the Azure Portal and find that it consists of all the resources defined in our architecture.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/deploymentSuccess.png" alt="image alt text" /></p>
+<p><img src="/assets/img/deploymentSuccess.png" alt="image alt text" /></p>
 </section>
   
 
@@ -267,7 +267,7 @@
 
     </div>
     
-<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+<script src="/assets/js/katex_init.js"></script>
 
 
 

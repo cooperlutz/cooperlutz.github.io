@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cooper's Cloud</title>
-    <atom:link href="/cooperlutz.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <link>http://localhost:4000/cooperlutz.github.io/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>http://localhost:4000/</link>
     <description>Cooper's Cloud</description>
-    <pubDate>Sun, 06 Mar 2022 13:24:04 -0600</pubDate>
+    <pubDate>Mon, 07 Mar 2022 09:54:02 -0600</pubDate>
     
       <item>
         <title>Azure AD, Azure AD DS, &amp; AD DS on Azure</title>
-        <link>/cooperlutz.github.io/2019/04/09/azuread-aadds-adds.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2019/04/09/azuread-aadds-adds.html</guid>
+        <link>/2019/04/09/azuread-aadds-adds.html</link>
+        <guid isPermaLink="true">/2019/04/09/azuread-aadds-adds.html</guid>
         <description>&lt;p&gt;What are these different services? When should we use one versus the other? Do they provide similar capabilities? There are a number of identity options within Azure and its easy to confuse the purposes and capabilities of each solution.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/AADDS_AAD_ADDS_Architecture-1024x538.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/AADDS_AAD_ADDS_Architecture-1024x538.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:heading {&quot;level&quot;:3} --&gt;
 &lt;h3&gt;Azure AD&lt;/h3&gt;
@@ -56,13 +56,13 @@
 &lt;p&gt;In the following graphic portrays how each identity service may be utilized in a scenario of managing a single Azure Windows Virtual Machine.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/Azure_DS_Scenarios-1024x504.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/Azure_DS_Scenarios-1024x504.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;In this scenario, the Windows VM can be joined to either AD DS domain or my Azure AD DS domain, but not both. The option to join a Virtual Machine to one of these domains is one or the other situation.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ADDS_AADDS_diagram-1024x485.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ADDS_AADDS_diagram-1024x485.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:heading --&gt;
 &lt;h2&gt;What do we do?&lt;/h2&gt;
@@ -76,8 +76,8 @@
     
       <item>
         <title>Developing Custom Dashboards in Azure</title>
-        <link>/cooperlutz.github.io/2018/12/31/developing-custom-dashboards.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2018/12/31/developing-custom-dashboards.html</guid>
+        <link>/2018/12/31/developing-custom-dashboards.html</link>
+        <guid isPermaLink="true">/2018/12/31/developing-custom-dashboards.html</guid>
         <description>&lt;p&gt;Whether you've been working with Azure for years or are just getting started, you'll often find yourself starting at the Dashboard blade as you work in the Azure Portal. Every time you login, as you're navigating around and working through various tasks, after you've spent your entire 8 hour day trying to build out or troubleshoot an application, the Dashboard will always be there along for the ride. Building a custom Dashboard can enable you to quickly consume relevant information, identify issues, and make navigating the Azure Portal a much more enjoyable experience. In this post we'll explore some of the ins and outs of Dashboard templates as well as some of the features available for working with Dashboards.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
@@ -89,7 +89,7 @@
 &lt;p&gt;This is the default Dashboard that I use for my personal Azure environment. I've kept the Dashboard simple, but effective, for my purposes. I've embedded my logo, links to some Azure documentation that I visit regularly, the &quot;All Resources&quot; tile to quickly access Resources I've recently been working with, an Application Insights availability test that monitors the availability of the &lt;a href=&quot;https://cooperscloud.tech&quot;&gt;cooperscloud.tech&lt;/a&gt; site, and an image of a Sample Azure application architecture.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/DashboardImage-1024x646.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/DashboardImage-1024x646.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:heading --&gt;
 &lt;h2&gt;Methods for Creating and Developing Dashboards&lt;/h2&gt;
@@ -107,7 +107,7 @@
 &lt;p&gt;Existing Dashboards can be downloaded in JSON format from the Dashboard page. This feature provides the ability to manually customize a Dashboard and then save and re-deploy the Dashboard as code. This feature can be really useful when you want to quickly understand how a Tile is formatted before re-writing the code.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/DashboardDownload.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/DashboardDownload.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:heading --&gt;
 &lt;h2&gt;Develop Custom Azure Dashboards&lt;/h2&gt;
@@ -133,31 +133,31 @@
 &lt;p&gt; &lt;a href=&quot;https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/baseDashboard.json&quot;&gt;https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/baseDashboard.json&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/DashboardBaseJson.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/DashboardBaseJson.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;Taking a further look at the Tile definition, the first JSON object defined is the Tile's &quot;position&quot;, giving us the ability to control the size and location on the Dashboard grid. The image below displays the Dashboard &quot;edit&quot; view and displays the Dashboard grid. The second part of defining our Tile is the &quot;metadata&quot; object, which is where we define the type and content of the Tile.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/DashboardGrid.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/DashboardGrid.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;The first tile defined in the Sample Dashboard is a Markdown tile which gives us the ability to create and format freeform text in Markdown syntax. In this case, I used this Markdown tile for the sole purpose of embedding my logo. &lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/DashboardCode-1024x654.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/DashboardCode-1024x654.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;Now in the case above for linking to a logo, I just linked directly to the image hosted on my website, but for the Sample Application Architecture tile, I link to an Azure Storage Account blob with a SAS token. In this way, I could link to proprietary images, such as application architectures deployed in my Azure environment, reference documentation to my applications, etc.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/AppArchitectureTile-1024x242.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/AppArchitectureTile-1024x242.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;Once we've defined all of the tiles in our Dashboard, all we have to do is save the file and click the &quot;Upload&quot; button from the Dashboard blade. We'll be prompted to choose the file to upload and then the Dashboard will be deployed and populated!&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/UploadDashboard-1024x80.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/UploadDashboard-1024x80.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:heading --&gt;
 &lt;h2&gt;Share Azure Dashboards&lt;/h2&gt;
@@ -171,15 +171,15 @@
 &lt;p&gt;Click the &quot;Share&quot; button at the top of the &quot;Dashboard&quot; blade, then choose a name, subscription, and location. By default Azure will create a &quot;dashboards&quot; Resource Group for the Dashboard resource to be deployed to, but you can deploy it to a different RG if you prefer.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ShareDashboard-1024x372.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ShareDashboard-1024x372.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/SharedDashboardResource-1024x360.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/SharedDashboardResource-1024x360.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:paragraph --&gt;
 &lt;p&gt;Once the Dashboard is shared, other users will have the ability to switch to the Shared Dashboard under their Dashboard selector. Shared Dashboards also come with the ability to control which users have access to view the Dashboard.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/OtherUserSelectDashboard.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/OtherUserSelectDashboard.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- wp:heading --&gt;
 &lt;h2&gt;Azure Portal Home versus Dashboard View&lt;/h2&gt;
@@ -193,15 +193,15 @@
 &lt;p&gt;Although I do like the look and feel of the new &quot;Home&quot; and it has some great resources, it's currently geared more toward a &quot;first time logging in&quot; experience. I personally hope it evolves toward serving as a hub for news, developments, and releases within Azure in addition to the educational reference links.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/AzureHomevsDashboard-1024x318.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/AzureHomevsDashboard-1024x318.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 31 Dec 2018 00:00:00 -0600</pubDate>
       </item>
     
       <item>
         <title>Improve Subscription Management with Azure Management Groups</title>
-        <link>/cooperlutz.github.io/2018/07/09/azure-management-groups.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2018/07/09/azure-management-groups.html</guid>
+        <link>/2018/07/09/azure-management-groups.html</link>
+        <guid isPermaLink="true">/2018/07/09/azure-management-groups.html</guid>
         <description>&lt;p&gt;Organizations and individuals often utilize multiple Subscriptions across their Azure environment. Depending on the needs of an organization, these may be split up by department, life-cycle, business unit, etc., and result in one or hundreds of Azure Subscriptions. The more Azure Subscriptions we have, the more difficult it becomes to manage each Subscriptions access controls and Azure Policy, often resulting in Subscription sprawl. With the introduction of Azure Management Groups, we can now more effectively manage our Azure Subscriptions by grouping them into containers, similar to the way we group like Azure Resources into Resource Groups.&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
@@ -209,7 +209,7 @@
 &lt;p&gt;To demonstrate Azure Management Groups, we will create the below hierarchy for our 3 Azure Subscriptions, which are segmented by life-cycle, Prod, Test, and Dev. In this case, we’ll create 2 Management Groups for “Prod” and “Testing”. We want to ensure that our Dev and Test Subscriptions have similar levels of access for our Developers, but we need to restrict Prod access.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-400&quot; src=&quot;assets/img/AzureManagementGroupDiagram.png&quot; alt=&quot;&quot; width=&quot;740&quot; height=&quot;640&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;Azure Management Group Details&lt;/h2&gt;
 &lt;ul&gt;
  	&lt;li&gt;Azure Management Groups can be assigned Access Controls and Azure Policies&lt;/li&gt;
@@ -225,7 +225,7 @@
 &lt;p&gt;To start building our Management Group hierarchy, we’ll begin by navigating to the “Management Groups” blade.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-404&quot; src=&quot;assets/img/managementGroupsBlade.png&quot; alt=&quot;&quot; width=&quot;491&quot; height=&quot;161&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -234,35 +234,35 @@
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-414&quot; src=&quot;assets/img/enableManagementGroups.png&quot; alt=&quot;&quot; width=&quot;608&quot; height=&quot;260&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;Create Azure Management Groups&lt;/h2&gt;
 &lt;p&gt;Now we can create our child Management Groups. We’ll create 2 Management Groups per our above hierarchy, “Prod” and “Testing”.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-415&quot; src=&quot;assets/img/addManagementGroup.png&quot; alt=&quot;&quot; width=&quot;457&quot; height=&quot;127&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Our Management Groups are made up of a name and ID. We will correlate these names and IDs to our “Prod” and “Testing” environments.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-405&quot; src=&quot;assets/img/prodMG.png&quot; alt=&quot;&quot; width=&quot;424&quot; height=&quot;340&quot; /&gt;             &lt;img class=&quot;alignnone wp-image-406&quot; src=&quot;assets/img/testMG.png&quot; alt=&quot;&quot; width=&quot;399&quot; height=&quot;342&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;Assign Subscriptions to Azure Management Groups&lt;/h2&gt;
 &lt;p&gt;With both of our Management Groups created, we need to assign our Subscriptions to our Management Groups. Under our “Testing” Management Group, we’ll click on the “(details)” link.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-416&quot; src=&quot;assets/img/addSubscription1-1.png&quot; alt=&quot;&quot; width=&quot;685&quot; height=&quot;182&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Within our “Testing” Management Group, we can assign access control, Azure Policy and assign any child Management Groups or Subscriptions. We’ll click on the “+ Add subscription” button to assign our “Dev” and “Test” Subscriptions.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-408&quot; src=&quot;assets/img/addSubscription2.png&quot; alt=&quot;&quot; width=&quot;1131&quot; height=&quot;328&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -271,29 +271,29 @@
 &lt;p&gt;&lt;strong&gt;IMPORTANT NOTE: &lt;/strong&gt;Existing access controls assigned to our Subscription will be removed once assigned to the new Management Group. Therefore, if we are migrating any subscriptions to this new model, we want to first assign their existing permissions set at the Subscription level, to the Management Group level. When migrating to Azure Management Groups, we want to ensure that we don’t lose any permissions.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-411&quot; src=&quot;assets/img/addSubscription3-2.png&quot; alt=&quot;&quot; width=&quot;424&quot; height=&quot;473&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;We’ll copy this same process with our remaining Subscriptions and we’ve now successfully created our defined Management Group hierarchy.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-421&quot; src=&quot;assets/img/completeMG.png&quot; alt=&quot;&quot; width=&quot;935&quot; height=&quot;470&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 09 Jul 2018 00:00:00 -0500</pubDate>
       </item>
     
       <item>
         <title>Mastering ARM Templates Episode 3 - Deployment</title>
-        <link>/cooperlutz.github.io/2018/05/29/mastering-arm-templates-3.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2018/05/29/mastering-arm-templates-3.html</guid>
+        <link>/2018/05/29/mastering-arm-templates-3.html</link>
+        <guid isPermaLink="true">/2018/05/29/mastering-arm-templates-3.html</guid>
         <description>&lt;p&gt;In previous episodes we took a look at the &lt;a href=&quot;https://cooperscloud.tech/arm-templates-ep1/&quot;&gt;basics of ARM Templates&lt;/a&gt;, and some of the methods of &lt;a href=&quot;https://cooperscloud.tech/arm-templates-ep2/&quot;&gt;developing ARM Templates&lt;/a&gt;. In this installation, we’ll take a look at common deployment options.&lt;/p&gt;
 &lt;h2&gt;Deployment Strategy&lt;/h2&gt;
 &lt;p&gt;When it comes to determining a standard deployment strategy for ARM Templates, there are a number of options, but the goal is to choose a strategy that fits the audience and situation. In certain circumstances it might make sense to mix and match these options to fit our overall deployment strategy.&lt;/p&gt;
 
 &lt;p&gt;To help with this decision, I’ve created a flowchart based on my own experiences and personal opinions:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ARMTemplateDecisionFlowchart.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ARMTemplateDecisionFlowchart.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;Deployment Concepts&lt;/h2&gt;
@@ -313,25 +313,25 @@
 &lt;h2&gt;&lt;strong&gt;Azure Portal Resource Deployment&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;One-time ARM Template deployments can be achieved by creating a new “Template deployment” resource within the Portal. It can be a valuable tool if we just want to test something out, but prevents us from easily redeploying, reusing, or managing our templates.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ResourceDeploymentNew.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ResourceDeploymentNew.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Within the “Template deployment”, we can start with a sample or build our own custom template.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ResourceDeployment.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ResourceDeployment.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Here we can paste in the contents of our template, generally this consists of the “azuredeploy.json” contents.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ResourceDeploymentCode.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ResourceDeploymentCode.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;After saving the template, we can input our parameters for the template deployment and then just click “Purchase” to deploy.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ResourceDeploymentParams.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ResourceDeploymentParams.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;&lt;strong&gt;PowerShell&lt;/strong&gt;&lt;/h2&gt;
@@ -339,51 +339,51 @@
 
 &lt;p&gt;The first option is to utilize the “New-AzureRmResourceGroupDeployment” script which provides the ability to reference a template and parameters file to be deployed to Azure. We can even append “-Mode (complete or incremental)” to specify our desired deployment mode. In the following example, a mode is not specified, resulting in the use of “incremental” mode.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/deploymentStart.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/deploymentStart.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;The previous script is fairly easy to use and doesn’t require much input, but there is another deployment script that provides much more flexiblity. Within the “Azure QuickStart Templates” repository, there’s a provided script &lt;a href=&quot;https://github.com/Azure/azure-quickstart-templates/blob/master/Deploy-AzureResourceGroup.ps1&quot;&gt;Deploy-AzureResourceGroup,&lt;/a&gt; which will do things like validate the template prior to deployment and create a new Resource Group if the one referenced doesn’t exist.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/PowerShellDeployment.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/PowerShellDeployment.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/PowerShellSuccess.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/PowerShellSuccess.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;&lt;strong&gt;Templates Blade&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;The “Templates” blade within the Azure Portal is currently a preview feature that provides the ability to store, share, and deploy commonly used templates. This is a great method for easily creating common resources as an alternative to Azure Marketplace resources. For members of the team who aren’t working with ARM Templates on a regular basis but need to deploy a standardized resource, the Templates Blade is a great option. The biggest drawbacks of this method are the inability to easily nest or reference parameters files.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/templateBlade.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/templateBlade.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;When creating a new template, a name and description are provided to specify the templates purpose or additional details.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/addTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/addTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Now we’ll just paste in the code that’s stored in our “azuredeploy.json” file containing our resource definitions. We’ll click “OK” and “Add”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/addTemplateCode.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/addTemplateCode.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;The template will show up under the Templates blade and is available for deployment.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/templateBladeTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/templateBladeTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;At the top of the Template, we’ll click the “Deploy” button.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/deployTemplateBladeTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/deployTemplateBladeTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;After clicking “Deploy”, we receive the friendly parameters page that will allow us to input the parameter values for deployment.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/templateBladeParameters.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/templateBladeParameters.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;&lt;strong&gt;Visual Studio&lt;/strong&gt;&lt;/h2&gt;
@@ -391,31 +391,31 @@
 
 &lt;p&gt;To deploy a template in Visual Studio, we’ll start by creating a new project.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VSNewProject.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VSNewProject.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;The Azure Resource Group project type can be found under “Visual C#” &amp;gt; “Cloud”. We’ll provide a name for our project and click “OK”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VSCreateProject.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VSCreateProject.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;After creating our new project, a second interface will allow us to choose which template we’d like to start with. In this case, we already have the code we want to use so we’ll just choose “Blank Template”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VSProjectTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VSProjectTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Now all we have to do is copy our template files into our new Visual Studio project. Once we have the template files added to the project, we can right-click on our Visual Studio project and click “Deploy”, and select “New…”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VSDeployTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VSDeployTemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;The deployment interface allows us to choose the Subscription, Resource Group, and our Template and Parameters file. This is a really nice feature when we have multiple parameters files stored in the project and want to easily select the appropriate parameters file rather than copy/pasting or typing them out into a PowerShell deployment script.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VSDeployment.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VSDeployment.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;&lt;strong&gt;Deploy to Azure&lt;/strong&gt;&lt;/h2&gt;
@@ -423,7 +423,7 @@
 
 &lt;p&gt;To add the “Deploy to Azure” button within a public GitHub repository, a README.md file is added to the repository containing the following string:&lt;/p&gt;
 &lt;pre&gt;[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
-![image alt text](/cooperlutz.github.io/assets/img/AzureDeploy.png)
+![image alt text](/assets/img/AzureDeploy.png)
 &lt;/pre&gt;
 </description>
         <pubDate>Tue, 29 May 2018 00:00:00 -0500</pubDate>
@@ -431,8 +431,8 @@
     
       <item>
         <title>Mastering ARM Templates Episode 1 - Development</title>
-        <link>/cooperlutz.github.io/2018/04/26/mastering-arm-templates-2.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2018/04/26/mastering-arm-templates-2.html</guid>
+        <link>/2018/04/26/mastering-arm-templates-2.html</link>
+        <guid isPermaLink="true">/2018/04/26/mastering-arm-templates-2.html</guid>
         <description>&lt;p&gt;In the &lt;a href=&quot;https://cooperscloud.tech/arm-templates-ep1/&quot;&gt;previous episode&lt;/a&gt;, we took a look at the ARM template schema, some of the tools that will help get you started in your ARM template journey, and deployed our first template. In this installation, we’ll take a deeper dive into some of the development methods and strategy.&lt;/p&gt;
 &lt;h2&gt;Define Template Scope&lt;/h2&gt;
 &lt;p&gt;Before developing a template, it’s important to define the scope of the template. In extreme cases, this could be the difference between the idea of an “infrastructure in a box” where you deploy a single template for your entire infrastructure vs. deploying separate templates for each resource type as you would in the Portal. Like most things, I think the best strategy is somewhere in the middle, and depends on your needs.&lt;/p&gt;
@@ -453,11 +453,11 @@
 
 &lt;p&gt;Generally, I start by creating a root folder with a name that specifies the purpose of the template.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/rootfolder.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/rootfolder.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Inside the root folder, I place the template “azuredeploy.json” file, along with dedicated folders for the additional files that will be referenced by the template.  The “parameters” folder for instance, contains any of the parameters files that are used to deploy the template. Multiple sets of parameters files can be stored inside this folder for separate deployments.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ARMTemplateFolderStructure.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ARMTemplateFolderStructure.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;Understanding ARM API Versions&lt;/h2&gt;
 &lt;p&gt;Each resource defined in a template contains an API version reference . Understanding how Azure manages these API versions can save you a lot of headache. Azure releases new API versions that include the latest features or settings available for a resource. However, it’s important to note that when a new API version is released, only certain Azure resources will be included in the release. This means that we can’t just grab the latest API version available and use that value for every resource in the template. It’s important to keep track of these API releases and ensure that templates are kept up to date.&lt;/p&gt;
 
@@ -475,7 +475,7 @@
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/architecture.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/architecture.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;&lt;/h4&gt;
 &lt;h4&gt;QuickStart Templates&lt;/h4&gt;
 &lt;p&gt;We’ll start by browsing to the Azure QuickStart Template repository that’s hosted on GitHub. From here, we can search through sample templates for one that suits our needs. One of the sample templates available (shown below) will serve as a great starting point will account for the web application server.&lt;/p&gt;
@@ -484,13 +484,13 @@
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/Azure/azure-quickstart-templates/tree/master/101-1vm-2nics-2subnets-1vnet&quot;&gt;https://github.com/Azure/azure-quickstart-templates/tree/master/101-1vm-2nics-2subnets-1vnet&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/azurequickstart.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/azurequickstart.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;Azure Generated Automation Script Templates&lt;/h4&gt;
 &lt;p&gt;With our web application server taken care of, we need to add in our SQL Server and Database. For these two components, we’ll download the Automation Script template that Azure generates for existing resources.&lt;/p&gt;
 
 &lt;p&gt;We’ll start by provisioning an Azure SQL instance within the portal.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/createSQLdb.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/createSQLdb.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -498,11 +498,11 @@
 
 &lt;p&gt;At the top of the Automation Script blade, we can download the template files to our local machine.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/downloadSQLtemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/downloadSQLtemplate.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The downloaded template contains a number of reference files:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ARMtemplatedownloadfiles.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ARMtemplatedownloadfiles.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;deploy.ps1 - PowerShell deployment script&lt;/p&gt;
 
@@ -526,9 +526,9 @@
 &lt;h4&gt;Template Reference Documentation&lt;/h4&gt;
 &lt;p&gt;It’s just about time to test our template but let’s validate our downloaded template against the reference documentation. Navigate to the Azure reference documentation (found &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/templates/&quot;&gt;here&lt;/a&gt;) and browse under the “Reference” section to find SQL &amp;gt; Servers. In comparing the downloaded Automation Script template to the reference documentation, we notice that the ”administratorLoginPassword” setting is missing from our template. Since the Automation Script does not download the secure string value, the setting is omitted from the downloaded template. It’s imperative to set a password on the database, so we’ll add this property into our template.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/sqlserver-downloaded.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/sqlserver-downloaded.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/SQLServertemplatereference.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/SQLServertemplatereference.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -538,19 +538,19 @@
 
 &lt;p&gt;We have all of the components accounted for - as laid out in our diagram - so let’s try deploying it:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/deploymentStart.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/deploymentStart.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;Success!&lt;/h2&gt;
 &lt;p&gt;Our template deployed successfully. Now we can take a look at our Resource Group in the Azure Portal and find that it consists of all the resources defined in our architecture.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/deploymentSuccess.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/deploymentSuccess.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 26 Apr 2018 00:00:00 -0500</pubDate>
       </item>
     
       <item>
         <title>Mastering ARM Templates Episode 1 - The Basics</title>
-        <link>/cooperlutz.github.io/2018/04/03/mastering-arm-templates-1.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2018/04/03/mastering-arm-templates-1.html</guid>
+        <link>/2018/04/03/mastering-arm-templates-1.html</link>
+        <guid isPermaLink="true">/2018/04/03/mastering-arm-templates-1.html</guid>
         <description>&lt;h2&gt;Getting Started with ARM Templates&lt;/h2&gt;
 &lt;p&gt;I’ve spent a considerable amount of time developing ARM Templates and have been working to put together a series of posts to help you master ARM Templates, whether you’re just getting started with Azure or have been developing ARM Templates since their inception. Beyond simplifying your deployments, you can learn so much about Azure’s inner workings and more complex features through ARM Template development.&lt;/p&gt;
 
@@ -560,7 +560,7 @@
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ARMTemplateDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ARMTemplateDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;ARM Templates Basics&lt;/h2&gt;
@@ -568,7 +568,7 @@
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ARMTemplate-Visual.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ARMTemplate-Visual.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h4&gt;ARM Template Resources&lt;/h4&gt;
@@ -582,7 +582,7 @@
 
 &lt;p&gt;VS Code is a light-weight editor that’s perfect for developing ARM Templates. VS Code has built-in integrations with  This is my recommended tool for a large majority of your ARM Templating needs, and one of my favorite features is the ability to auto-format JSON!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VSCode_Formatting.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VSCode_Formatting.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -626,7 +626,7 @@
 &lt;h4&gt;Deploy to Azure&lt;/h4&gt;
 &lt;p&gt;Click the Blue “Deploy to Azure button” provided in the GitHub link.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/deploytoAzure.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/deploytoAzure.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h4&gt;Configure Settings&lt;/h4&gt;
@@ -635,39 +635,39 @@
  	&lt;li&gt;Resource Group - you may choose to use an existing Resource Group, or &quot;Create New&quot;  and provide a &quot;Resource Group Name&quot; if you don't already have one in your subscription.&lt;/li&gt;
  	&lt;li&gt;Virtual Network name - this is auto-populated using then &quot;Default Value&quot; in our template, seen here:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/defaultvalue.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/defaultvalue.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;After filling out the settings, click “Next”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VNetTemplateDeploy1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VNetTemplateDeploy1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h4&gt;Click Deploy&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VNetTemplateDeploy2.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VNetTemplateDeploy2.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h4&gt;Deployment Complete&lt;/h4&gt;
 &lt;p&gt;After the deployment has completed, click the “Manage” link or open your Azure Portal.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VNetTemplateDeploy3.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VNetTemplateDeploy3.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h4&gt;Review Deployment in Azure Portal&lt;/h4&gt;
 &lt;p&gt;Our Virtual Network has successfully been deployed to Azure. It contains the two subnets that our template defined, along with the proper network address spaces.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VNetTemplateDeployFinal.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VNetTemplateDeployFinal.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/VNetTemplateDeploySubnets.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/VNetTemplateDeploySubnets.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Apr 2018 00:00:00 -0500</pubDate>
       </item>
     
       <item>
         <title>Cortana Skills and Azure</title>
-        <link>/cooperlutz.github.io/2018/03/14/cortana-and-azure.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2018/03/14/cortana-and-azure.html</guid>
+        <link>/2018/03/14/cortana-and-azure.html</link>
+        <guid isPermaLink="true">/2018/03/14/cortana-and-azure.html</guid>
         <description>&lt;p&gt;I received a “virtual assistant” as a gift this year and while I enjoy listening to music and quickly checking the weather forecast (spoiler: its always cold in Chicago), I love the idea of bringing the virtual assistant into the workplace. This week I decided to build learn more about building custom “Skills” and decided to put this to the test with Cortana and Azure administration.&lt;/p&gt;
 
 &lt;p&gt;I quickly came across the &lt;a href=&quot;https://developer.microsoft.com/en-us/cortana&quot;&gt;Cortana Dev Center&lt;/a&gt;, which provides an easy to use language and tool-set to develop Cortana skills. Rather than using C# or other programming language, Cortana Dev Center Skills are programmed using Semantic Composition Language (SCL). This is a great introductory programming language because its easy to read and understand.&lt;/p&gt;
@@ -675,7 +675,7 @@
 &lt;p&gt;Here’s a quick high-level architecture of what we’ll be deploying:&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-229&quot; src=&quot;/assets/img/CortanaDiagram.png&quot; alt=&quot;&quot; width=&quot;584&quot; height=&quot;419&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;The Scenario&lt;/h2&gt;
@@ -689,13 +689,13 @@
 &lt;p&gt;Start by signing into the &lt;a href=&quot;https://developer.microsoft.com/en-us/cortana&quot;&gt;Cortana Dev Center&lt;/a&gt; and create a new Cortana Skill. Follow the steps provided and fill out the information requested.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-226&quot; src=&quot;/assets/img/SkillStep1.png&quot; alt=&quot;&quot; width=&quot;480&quot; height=&quot;309&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-227&quot; src=&quot;/assets/img/SkillStep2.png&quot; alt=&quot;&quot; width=&quot;480&quot; height=&quot;401&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-228&quot; src=&quot;/assets/img/SkillStep3.png&quot; alt=&quot;&quot; width=&quot;480&quot; height=&quot;451&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h4&gt;Add the Botlet code&lt;/h4&gt;
@@ -708,7 +708,7 @@
 &lt;p&gt;Add a new Runbook to your Automation Account&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-213&quot; src=&quot;/assets/img/CreateRunbook-1.png&quot; alt=&quot;&quot; width=&quot;574&quot; height=&quot;301&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Paste the Runbook code from here:&lt;/p&gt;
 
@@ -719,53 +719,53 @@
 &lt;p&gt;From within the Runbook, navigate to the Webhook and Create a New webhook. Give your webhook a name, and expiration. The URL will be autogenerated.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-214&quot; src=&quot;/assets/img/RunbookWebhook.png&quot; alt=&quot;&quot; width=&quot;577&quot; height=&quot;524&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;Add a new botlet service&lt;/h4&gt;
 &lt;p&gt;Add a new service to the botlet solution&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-219&quot; src=&quot;/assets/img/CortanaService1.png&quot; alt=&quot;&quot; width=&quot;480&quot; height=&quot;468&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Add a description to the service and an image if desired&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-215&quot; src=&quot;/assets/img/CortanaService2.png&quot; alt=&quot;&quot; width=&quot;480&quot; height=&quot;397&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Choose the “I have a web service” option, and paste the Runbook Webhook URL. You’ll need to remove the “?token=asdf….” portion, but make sure you save that portion for the next step.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-216&quot; src=&quot;/assets/img/CortanaService3.png&quot; alt=&quot;&quot; width=&quot;480&quot; height=&quot;431&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Update the Webhook URL to include the “?token=asdf1234…..”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/UpdateWebhook1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Add an action to the Service.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-221&quot; src=&quot;/assets/img/CortanaServiceAction.png&quot; alt=&quot;&quot; width=&quot;2152&quot; height=&quot;360&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Add the Action Parameters, in this case, VM name.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-222&quot; src=&quot;/assets/img/CortanaActionParam.png&quot; alt=&quot;&quot; width=&quot;2164&quot; height=&quot;719&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Test the solution by chatting with Cortana.&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone wp-image-223&quot; src=&quot;/assets/img/CortanaChat.png&quot; alt=&quot;&quot; width=&quot;644&quot; height=&quot;755&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -774,14 +774,14 @@
 &lt;p&gt;Here we see the output of our Runbook&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-224&quot; src=&quot;/assets/img/RunbookOutput.png&quot; alt=&quot;&quot; width=&quot;1284&quot; height=&quot;568&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Success!&lt;/p&gt;
 
 &lt;p&gt;&lt;img class=&quot;alignnone size-full wp-image-225&quot; src=&quot;/assets/img/SUCCESS.png&quot; alt=&quot;&quot; width=&quot;1041&quot; height=&quot;52&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;Next Steps&lt;/h2&gt;
@@ -792,11 +792,11 @@
     
       <item>
         <title>Azure Hybrid Runbook Workers are Awesome</title>
-        <link>/cooperlutz.github.io/2018/03/05/azure-hybrid-workers.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2018/03/05/azure-hybrid-workers.html</guid>
+        <link>/2018/03/05/azure-hybrid-workers.html</link>
+        <guid isPermaLink="true">/2018/03/05/azure-hybrid-workers.html</guid>
         <description>&lt;p&gt;Azure Hybrid Runbook Workers enable Azure Automation Runbooks to run in a local context (OS/Server level). The Hybrid Runbook Worker’s functionality is achieved through a combination of Azure Log Analytics, Microsoft Monitoring Agent, and Azure Automation Runbooks.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/HybridWorkerDiagram-1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/HybridWorkerDiagram-1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;h2&gt;Why Are Hybrid Runbook Workers Awesome?&lt;/h2&gt;
 &lt;p&gt;Central Management of Scripts - store all automation scripts needed across the environment, in one location.&lt;/p&gt;
@@ -827,31 +827,31 @@
 
 &lt;p&gt;Navigate to “Log Analytics” in the Azure portal and add a new Workspace.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/CreateWorkspace.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/CreateWorkspace.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;We need to add the “Automation and Control” solution to our OMS Workspace. Navigate to the OMS Portal and open the Solutions Gallery.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/OpenOMSPortal-1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/OpenOMSPortal-1.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Within the OMS Solutions Gallery, select “Automation &amp;amp; Control”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/SolutionsGallery.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/SolutionsGallery.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;The solution will provide a warning that the Workspace needs to be configured.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ConfigureWorkspace.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ConfigureWorkspace.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Specify the Azure Automation Account you will be using to run your Hybrid Worker. If you don’t already have an Automation Account, you can create a new one from here.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ConfigureWorkspaceAutomation.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ConfigureWorkspaceAutomation.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h4&gt;Configure the Hybrid Runbook Worker Server&lt;/h4&gt;
@@ -862,7 +862,7 @@
 &lt;p&gt;&lt;em&gt;Note if you are not using Windows Server 2016, you may need to install Windows Management Framework 5.0 to utilize necessary PowerShell scripts.&lt;/em&gt;&lt;/p&gt;
 &lt;pre&gt;Install-Script -Name New-OnPremiseHybridWorker -RequiredVersion 1.0&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/InstallHRWModule.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/InstallHRWModule.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -870,7 +870,7 @@
 &lt;pre&gt;New-OnPremiseHybridWorker.ps1  -WorkspaceName &amp;lt;NameOfOMSWorkspace&amp;gt;&lt;/pre&gt;
 &lt;p&gt;The script will ask you to input the additional parameters needed:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/newhybridworkerscript.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/newhybridworkerscript.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;&lt;/h4&gt;
 &lt;p&gt;And that’s that, the server configuration is complete!&lt;/p&gt;
 
@@ -878,7 +878,7 @@
 &lt;h4&gt;Create the Runbook&lt;/h4&gt;
 &lt;p&gt;Create a new Runbook within your Azure Automation Account.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/CreateRunbook.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/CreateRunbook.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -886,23 +886,23 @@
 
 &lt;p&gt;&lt;strong&gt;Note: if using non-standard modules, the modules must be installed on the Hybrid Worker VM before executing.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/RunbookCode.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/RunbookCode.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;&lt;/h4&gt;
 &lt;h4&gt;Test the Solution&lt;/h4&gt;
 &lt;p&gt;Stop Print Spooler on the Virtual Machine.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/SpoolerStopped.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/SpoolerStopped.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Start your Runbook and specify that it will be run on the Hybrid Worker.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/StartRunbook.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/StartRunbook.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;h2&gt;Success!&lt;/h2&gt;
 &lt;p&gt;After the Runbook task has completed, Print Spooler is running on the server.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/SpoolerRunning.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/SpoolerRunning.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;Azure Automation Watcher Tasks&lt;/h2&gt;
@@ -928,30 +928,30 @@
 &lt;h4&gt;Add the Local VM Credentials to Azure Automation&lt;/h4&gt;
 &lt;p&gt;Navigate to the “Shared Resources” section of the Automation Account and add a new credential. For testing purposes, I’m just adding the local admin account.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/Credentials.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/Credentials.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;h4&gt;Configure the Watcher Task&lt;/h4&gt;
 &lt;p&gt;Navigate to the “Watcher tasks” section within your Automation Account, and click “Add a watcher task”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/WatcherAdd.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/WatcherAdd.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Specify a name for the task and the frequency to run (1-59 in minutes). Then select the “Watch-Service” Runbook as the “Watcher” and input the service name parameter (in this case, “Spooler”) and computer name parameter (in this case, “localhost”).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/MultiP2SDiagram.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;For the “Action”, select the “Process-Service” Runbook, the parameter should be left blank as the value will be passed from the Watcher task.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/WatcherAction.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/WatcherAction.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Once again, we manually stop the Spooler service and wait for our watcher task to execute.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/WatcherOutput.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/WatcherOutput.png&quot; alt=&quot;image alt text&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;
 &lt;h2&gt;Success!&lt;/h2&gt;
@@ -961,13 +961,13 @@
     
       <item>
         <title>Azure Automation and Table Storage - Creating a Basic Azure IPAM Solution</title>
-        <link>/cooperlutz.github.io/2018/02/19/azure-automation-ipam.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2018/02/19/azure-automation-ipam.html</guid>
+        <link>/2018/02/19/azure-automation-ipam.html</link>
+        <guid isPermaLink="true">/2018/02/19/azure-automation-ipam.html</guid>
         <description>&lt;p&gt;I wanted to provide a basic demo of Azure Automation, Azure Storage Explorer, and the use of Storage Account Tables, because I think all three are extremely valuable to any Azure Administrator or Developer. Personally, I think its more fun to provide a working solution that fully utilizes the features rather than regurgitate information that’s already available, so I came up with this.&lt;/p&gt;
 &lt;h3 id=&quot;the-problem&quot;&gt;The Problem&lt;/h3&gt;
 &lt;p&gt;Managing, planning, and organizing address spaces within Azure can get quite cumbersome and is something that I believe could be improved upon in the portal. I find myself clicking in and out of VNets, their subnets, checking outdated spreadsheets, and trying to keep everything updated once there are too many cooks in the kitchen. I chose to build this solution in Azure Automation and store my data in a Storage Account Table. Here’s the final product:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.iostorageExplorerFinal.png&quot; alt=&quot;Azure Storage Explorer&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;storageExplorerFinal.png&quot; alt=&quot;Azure Storage Explorer&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;the-solution&quot;&gt;The Solution&lt;/h3&gt;
 &lt;p&gt;I’ve provided an Azure Automation Runbook, and Local PowerShell versions of this solution which can be found on my GitHub or PowerShell Gallery:
@@ -1061,28 +1061,28 @@
 
 &lt;p&gt;I choose LRS for these general purpose Storage Accounts because I’m not too concerned about losing the data or not being able to access it during an Azure outage.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/createStorageAccount.png&quot; alt=&quot;create storage account&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/createStorageAccount.png&quot; alt=&quot;create storage account&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;That’s it! Our Storage Account is ready to be used.&lt;/p&gt;
 
 &lt;h3 id=&quot;configuring-the-azure-automation-account&quot;&gt;Configuring the Azure Automation Account&lt;/h3&gt;
 &lt;p&gt;Start by searching for the Automation Account blade in Azure.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/NewAutomationAccount.png&quot; alt=&quot;create automation account&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/NewAutomationAccount.png&quot; alt=&quot;create automation account&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Click to add a new automation account.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/ClickNew.png&quot; alt=&quot;click new&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ClickNew.png&quot; alt=&quot;click new&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;add-automation-account&quot;&gt;Add Automation Account&lt;/h4&gt;
 &lt;p&gt;Create Azure Run As account - I choose “Yes” to this feature as my automation account deployment will generate an AzureAD account that will have Contributor access to my Azure resources. You can navigate to the “Run as accounts” under your Automation Account’s “Account Settings” to view its generated display name, Application ID, and Roles, and other relevant information. It is possible to modify the level of access this account has after it is generated.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/addAutomationAccount.png&quot; alt=&quot;add Automation Account&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/addAutomationAccount.png&quot; alt=&quot;add Automation Account&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;updating-modules&quot;&gt;Updating Modules&lt;/h4&gt;
 &lt;p&gt;Start by viewing the default PowerShell Modules added to the Automation Account. The default modules are very early versions, so we want to update these to latest. The “Update Azure Modules” button at the top will quickly update all Modules to latest.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/modules.png&quot; alt=&quot;add Automation Account modules&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/modules.png&quot; alt=&quot;add Automation Account modules&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;adding-modules&quot;&gt;Adding Modules&lt;/h4&gt;
 &lt;p&gt;Once our modules are updated, we need to add a few from the gallery for the runbook we are about to deploy. Navigate to the gallery and search for the needed modules&lt;/p&gt;
@@ -1091,71 +1091,71 @@
 
 &lt;p&gt;AzureRM.Network&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/moduleSearch.png&quot; alt=&quot;modules search&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/moduleSearch.png&quot; alt=&quot;modules search&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Click OK to add the module to your Automation Account.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/addModule.png&quot; alt=&quot;add module&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/addModule.png&quot; alt=&quot;add module&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;handling-module-dependency-issues&quot;&gt;Handling Module Dependency Issues&lt;/h4&gt;
 &lt;p&gt;Upon imporing the “AzureRM.Network” module, I’ve ran into a dependency issue with “AzureRM.Profile”. Although I updated all of my Azure modules, I ended up with 4.2.0. I’ve found the best way to combat this is with the following method:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/dependencyError.png&quot; alt=&quot;dependency error&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/dependencyError.png&quot; alt=&quot;dependency error&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;From the Modules blade, click on the “AzureRM.Profile” module, and then choose to delete it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/deleteProfile42.png&quot; alt=&quot;delete profile&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/deleteProfile42.png&quot; alt=&quot;delete profile&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once deleted, the module version will default back to the lowest version.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/Profile103.png&quot; alt=&quot;profile 103&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/Profile103.png&quot; alt=&quot;profile 103&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Navigate to the online &lt;a href=&quot;https://www.powershellgallery.com&quot;&gt;PowerShell Gallery&lt;/a&gt;, search for the needed module, and select it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/psGallery43.png&quot; alt=&quot;aps gallery 43&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/psGallery43.png&quot; alt=&quot;aps gallery 43&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Click the “Deploy to Azure Automation” button.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/deployProfileAA.png&quot; alt=&quot;deploy profile aa&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/deployProfileAA.png&quot; alt=&quot;deploy profile aa&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Select your Automation Account and click OK.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/selectAAaccount.png&quot; alt=&quot;select aa account&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/selectAAaccount.png&quot; alt=&quot;select aa account&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once the import has completed, return to the Automation Account and check the “Modules” blade, the AzureRM.Profile version should now show as 4.3.0.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/profilemodule43.png&quot; alt=&quot;profile module 43&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/profilemodule43.png&quot; alt=&quot;profile module 43&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now we can return to the gallery and attempt to import the AzureRM.Network Module. This time we are not met with any dependency warning. Click OK to import the modules.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/networkNoIssue.png&quot; alt=&quot;network no issue&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/networkNoIssue.png&quot; alt=&quot;network no issue&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;deploying-the-runbook&quot;&gt;Deploying the Runbook&lt;/h3&gt;
 &lt;p&gt;Navigate to the &lt;a href=&quot;https://www.powershellgallery.com/packages/Generate-AzureIPAMTable/&quot;&gt;PowerShell Gallery where the script is hosted.&lt;/a&gt; Click the “Deploy to Azure Automation” button to add it to your Automation Account.&lt;/p&gt;
 
 &lt;p&gt;Select your Automation Account and click OK.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/deployGenerateScript.png&quot; alt=&quot;deploy generate script&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/deployGenerateScript.png&quot; alt=&quot;deploy generate script&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Navigate back to your Azure Automation Account and select “Runbooks”. We see that the “Generate-AzureIPAMTable” runbook has been added. Select the runbook.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/runbooksGenerateAdded.png&quot; alt=&quot;runbooks generated added&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/runbooksGenerateAdded.png&quot; alt=&quot;runbooks generated added&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;From here we can make edits to the code, delete the runbook, add a schedule to automatically run our script, or review past executions. First we will click “Edit” and then choose “Publish” to make the Runbook available for execution.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/selectRunbook.png&quot; alt=&quot;select runbook&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/selectRunbook.png&quot; alt=&quot;select runbook&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;After publishing, we can run the script for the first time. Click “Start” to execute the script.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/runRunbook.png&quot; alt=&quot;run runbook&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/runRunbook.png&quot; alt=&quot;run runbook&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Enter the resource group of the storage account, and the storage account name, then click OK.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/runbookParamsz.png&quot; alt=&quot;runbook params&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/runbookParamsz.png&quot; alt=&quot;runbook params&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We can click on the “Output” to view the running details of the script.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/runbookOutput.png&quot; alt=&quot;runbook output&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/runbookOutput.png&quot; alt=&quot;runbook output&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once completed we will move on to viewing our Table’s data.&lt;/p&gt;
 
@@ -1164,16 +1164,16 @@
 
 &lt;p&gt;Connect to your Storage Account either by logging into Azure or providing the Storage Account name and key.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/StorageExplorer.png&quot; alt=&quot;storage explorer&quot; /&gt;
-&lt;img src=&quot;/cooperlutz.github.io/assets/img/storageAccountkeey.png&quot; alt=&quot;storage account key&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/StorageExplorer.png&quot; alt=&quot;storage explorer&quot; /&gt;
+&lt;img src=&quot;/assets/img/storageAccountkeey.png&quot; alt=&quot;storage account key&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once connected, we see our table has been generated with our Azure IP resources.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/storageExplorerTableview.png&quot; alt=&quot;table view&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/storageExplorerTableview.png&quot; alt=&quot;table view&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can change the column options to make things a little friendlier.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/columnOptionsStorageExplorer.png&quot; alt=&quot;column options sorted&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/columnOptionsStorageExplorer.png&quot; alt=&quot;column options sorted&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;complete&quot;&gt;Complete!&lt;/h3&gt;
 </description>
@@ -1182,17 +1182,17 @@
     
       <item>
         <title>Certificate Challenges with Multiple Point-to-Site VPN Gateways</title>
-        <link>/cooperlutz.github.io/2018/02/10/point-to-site-vpn.html</link>
-        <guid isPermaLink="true">/cooperlutz.github.io/2018/02/10/point-to-site-vpn.html</guid>
+        <link>/2018/02/10/point-to-site-vpn.html</link>
+        <guid isPermaLink="true">/2018/02/10/point-to-site-vpn.html</guid>
         <description>&lt;p&gt;I ran into an extremely common issue with a Point-to-Site configuration with a not so common resolution. The Point-to-Site &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal&quot;&gt;configuration guide provided by Microsoft&lt;/a&gt; is pretty easy to follow. Microsoft provides specific instructions and recommendations and I’ve followed this guide on numerous occasions.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/MultiP2SDiagram.png&quot; alt=&quot;Multi P2S Diagram&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/MultiP2SDiagram.png&quot; alt=&quot;Multi P2S Diagram&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In this particular instance, I needed to configure a Point-to-Site connections between two separate VPN Gateways, all existing in the same subscription/region.&lt;/p&gt;
 
 &lt;p&gt;I created a Root and Client certificate using &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-certificates-point-to-site&quot;&gt;PowerShell&lt;/a&gt; and uploaded the Base-64 .cer from my Root certificate to both of my test VPN Gateways. Copy and pasting directly from Notepad as most of us generally do:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/CertificateNotepad.png&quot; alt=&quot;Cert Notepad&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/CertificateNotepad.png&quot; alt=&quot;Cert Notepad&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The certificate uploaded to both of my “test” gateways and I was able to configure the Point-to-Site connections from both of these gateways.&lt;/p&gt;
 
@@ -1207,7 +1207,7 @@
 
 &lt;p&gt;Ok, well this was frustrating. So based on the error I received I was confident that the Root certificate had to be the issue. I wondered if it was something about the way the certificate was pasted within the Point-to-Site configuration. What if that “Enter” character that copied over from the Base-64 .cer file was pasting incorrectly into my P2S certificate line. I tested this theory out by reformatting my certificate to look a little something like this, making sure not to include the “BEGIN” and “END” sections of course:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/cooperlutz.github.io/assets/img/CertificateOneLine.png&quot; alt=&quot;Cert One Line&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/CertificateOneLine.png&quot; alt=&quot;Cert One Line&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So essentially I was uploading the certificate without any spaces or strange “Enter” characters that could have been copied over from the generic certificate format. I went to re-upload the certificate to my “Gateway02” P2S configuration and sure enough I was met with an error:&lt;/p&gt;
 

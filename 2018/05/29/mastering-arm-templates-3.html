@@ -8,17 +8,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css">
 
 	<!--Favicon-->
-	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/cooperlutz.github.io/2018/05/29/mastering-arm-templates-3.html">
+	<link rel="canonical" href="/2018/05/29/mastering-arm-templates-3.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
-		href="/cooperlutz.github.io/feed.xml" />
+		href="/feed.xml" />
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -47,12 +47,12 @@
     <header class="site-header">
 	<div class="branding">
 		
-		<a href="/cooperlutz.github.io/">
-			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		<a href="/">
+			<img class="avatar" src="/assets/img/CoopersCloudLogoColor.png" alt=""/>
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+			<a href="/">Cooper's Cloud</a>
 		</h1>
 	</div>
 	<nav class="site-nav">
@@ -136,7 +136,7 @@
 
     <div class="content">
       <article >
-  <header style="background-image: url('/cooperlutz.github.io/')">
+  <header style="background-image: url('/')">
     <h1 class="title">Mastering ARM Templates Episode 3 - Deployment</h1>
     
     <p class="meta">
@@ -150,7 +150,7 @@
 
 <p>To help with this decision, I’ve created a flowchart based on my own experiences and personal opinions:</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/ARMTemplateDecisionFlowchart.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ARMTemplateDecisionFlowchart.png" alt="image alt text" /></p>
 
 <p> </p>
 <h2>Deployment Concepts</h2>
@@ -170,25 +170,25 @@
 <h2><strong>Azure Portal Resource Deployment</strong></h2>
 <p>One-time ARM Template deployments can be achieved by creating a new “Template deployment” resource within the Portal. It can be a valuable tool if we just want to test something out, but prevents us from easily redeploying, reusing, or managing our templates.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/ResourceDeploymentNew.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ResourceDeploymentNew.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>Within the “Template deployment”, we can start with a sample or build our own custom template.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/ResourceDeployment.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ResourceDeployment.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>Here we can paste in the contents of our template, generally this consists of the “azuredeploy.json” contents.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/ResourceDeploymentCode.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ResourceDeploymentCode.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>After saving the template, we can input our parameters for the template deployment and then just click “Purchase” to deploy.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/ResourceDeploymentParams.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ResourceDeploymentParams.png" alt="image alt text" /></p>
 
 <p> </p>
 <h2><strong>PowerShell</strong></h2>
@@ -196,51 +196,51 @@
 
 <p>The first option is to utilize the “New-AzureRmResourceGroupDeployment” script which provides the ability to reference a template and parameters file to be deployed to Azure. We can even append “-Mode (complete or incremental)” to specify our desired deployment mode. In the following example, a mode is not specified, resulting in the use of “incremental” mode.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/deploymentStart.png" alt="image alt text" /></p>
+<p><img src="/assets/img/deploymentStart.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>The previous script is fairly easy to use and doesn’t require much input, but there is another deployment script that provides much more flexiblity. Within the “Azure QuickStart Templates” repository, there’s a provided script <a href="https://github.com/Azure/azure-quickstart-templates/blob/master/Deploy-AzureResourceGroup.ps1">Deploy-AzureResourceGroup,</a> which will do things like validate the template prior to deployment and create a new Resource Group if the one referenced doesn’t exist.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/PowerShellDeployment.png" alt="image alt text" /></p>
+<p><img src="/assets/img/PowerShellDeployment.png" alt="image alt text" /></p>
 
-<p><img src="/cooperlutz.github.io/assets/img/PowerShellSuccess.png" alt="image alt text" /></p>
+<p><img src="/assets/img/PowerShellSuccess.png" alt="image alt text" /></p>
 
 <p> </p>
 <h2><strong>Templates Blade</strong></h2>
 <p>The “Templates” blade within the Azure Portal is currently a preview feature that provides the ability to store, share, and deploy commonly used templates. This is a great method for easily creating common resources as an alternative to Azure Marketplace resources. For members of the team who aren’t working with ARM Templates on a regular basis but need to deploy a standardized resource, the Templates Blade is a great option. The biggest drawbacks of this method are the inability to easily nest or reference parameters files.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/templateBlade.png" alt="image alt text" /></p>
+<p><img src="/assets/img/templateBlade.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>When creating a new template, a name and description are provided to specify the templates purpose or additional details.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/addTemplate.png" alt="image alt text" /></p>
+<p><img src="/assets/img/addTemplate.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>Now we’ll just paste in the code that’s stored in our “azuredeploy.json” file containing our resource definitions. We’ll click “OK” and “Add”.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/addTemplateCode.png" alt="image alt text" /></p>
+<p><img src="/assets/img/addTemplateCode.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>The template will show up under the Templates blade and is available for deployment.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/templateBladeTemplate.png" alt="image alt text" /></p>
+<p><img src="/assets/img/templateBladeTemplate.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>At the top of the Template, we’ll click the “Deploy” button.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/deployTemplateBladeTemplate.png" alt="image alt text" /></p>
+<p><img src="/assets/img/deployTemplateBladeTemplate.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>After clicking “Deploy”, we receive the friendly parameters page that will allow us to input the parameter values for deployment.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/templateBladeParameters.png" alt="image alt text" /></p>
+<p><img src="/assets/img/templateBladeParameters.png" alt="image alt text" /></p>
 
 <p> </p>
 <h2><strong>Visual Studio</strong></h2>
@@ -248,31 +248,31 @@
 
 <p>To deploy a template in Visual Studio, we’ll start by creating a new project.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/VSNewProject.png" alt="image alt text" /></p>
+<p><img src="/assets/img/VSNewProject.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>The Azure Resource Group project type can be found under “Visual C#” &gt; “Cloud”. We’ll provide a name for our project and click “OK”.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/VSCreateProject.png" alt="image alt text" /></p>
+<p><img src="/assets/img/VSCreateProject.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>After creating our new project, a second interface will allow us to choose which template we’d like to start with. In this case, we already have the code we want to use so we’ll just choose “Blank Template”.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/VSProjectTemplate.png" alt="image alt text" /></p>
+<p><img src="/assets/img/VSProjectTemplate.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>Now all we have to do is copy our template files into our new Visual Studio project. Once we have the template files added to the project, we can right-click on our Visual Studio project and click “Deploy”, and select “New…”.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/VSDeployTemplate.png" alt="image alt text" /></p>
+<p><img src="/assets/img/VSDeployTemplate.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>The deployment interface allows us to choose the Subscription, Resource Group, and our Template and Parameters file. This is a really nice feature when we have multiple parameters files stored in the project and want to easily select the appropriate parameters file rather than copy/pasting or typing them out into a PowerShell deployment script.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/VSDeployment.png" alt="image alt text" /></p>
+<p><img src="/assets/img/VSDeployment.png" alt="image alt text" /></p>
 
 <p> </p>
 <h2><strong>Deploy to Azure</strong></h2>
@@ -280,7 +280,7 @@
 
 <p>To add the “Deploy to Azure” button within a public GitHub repository, a README.md file is added to the repository containing the following string:</p>
 <pre>[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
-![image alt text](/cooperlutz.github.io/assets/img/AzureDeploy.png)
+![image alt text](/assets/img/AzureDeploy.png)
 </pre>
 </section>
   
@@ -295,7 +295,7 @@
 
     </div>
     
-<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+<script src="/assets/js/katex_init.js"></script>
 
 
 

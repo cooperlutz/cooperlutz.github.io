@@ -8,17 +8,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css">
 
 	<!--Favicon-->
-	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/cooperlutz.github.io/2018/02/10/point-to-site-vpn.html">
+	<link rel="canonical" href="/2018/02/10/point-to-site-vpn.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
-		href="/cooperlutz.github.io/feed.xml" />
+		href="/feed.xml" />
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -47,12 +47,12 @@
     <header class="site-header">
 	<div class="branding">
 		
-		<a href="/cooperlutz.github.io/">
-			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		<a href="/">
+			<img class="avatar" src="/assets/img/CoopersCloudLogoColor.png" alt=""/>
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+			<a href="/">Cooper's Cloud</a>
 		</h1>
 	</div>
 	<nav class="site-nav">
@@ -136,7 +136,7 @@
 
     <div class="content">
       <article >
-  <header style="background-image: url('/cooperlutz.github.io/')">
+  <header style="background-image: url('/')">
     <h1 class="title">Certificate Challenges with Multiple Point-to-Site VPN Gateways</h1>
     
     <p class="meta">
@@ -146,13 +146,13 @@
   </header>
   <section class="post-content"><p>I ran into an extremely common issue with a Point-to-Site configuration with a not so common resolution. The Point-to-Site <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal">configuration guide provided by Microsoft</a> is pretty easy to follow. Microsoft provides specific instructions and recommendations and I’ve followed this guide on numerous occasions.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/MultiP2SDiagram.png" alt="Multi P2S Diagram" /></p>
+<p><img src="/assets/img/MultiP2SDiagram.png" alt="Multi P2S Diagram" /></p>
 
 <p>In this particular instance, I needed to configure a Point-to-Site connections between two separate VPN Gateways, all existing in the same subscription/region.</p>
 
 <p>I created a Root and Client certificate using <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-certificates-point-to-site">PowerShell</a> and uploaded the Base-64 .cer from my Root certificate to both of my test VPN Gateways. Copy and pasting directly from Notepad as most of us generally do:</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/CertificateNotepad.png" alt="Cert Notepad" /></p>
+<p><img src="/assets/img/CertificateNotepad.png" alt="Cert Notepad" /></p>
 
 <p>The certificate uploaded to both of my “test” gateways and I was able to configure the Point-to-Site connections from both of these gateways.</p>
 
@@ -167,7 +167,7 @@
 
 <p>Ok, well this was frustrating. So based on the error I received I was confident that the Root certificate had to be the issue. I wondered if it was something about the way the certificate was pasted within the Point-to-Site configuration. What if that “Enter” character that copied over from the Base-64 .cer file was pasting incorrectly into my P2S certificate line. I tested this theory out by reformatting my certificate to look a little something like this, making sure not to include the “BEGIN” and “END” sections of course:</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/CertificateOneLine.png" alt="Cert One Line" /></p>
+<p><img src="/assets/img/CertificateOneLine.png" alt="Cert One Line" /></p>
 
 <p>So essentially I was uploading the certificate without any spaces or strange “Enter” characters that could have been copied over from the generic certificate format. I went to re-upload the certificate to my “Gateway02” P2S configuration and sure enough I was met with an error:</p>
 
@@ -203,7 +203,7 @@
 
     </div>
     
-<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+<script src="/assets/js/katex_init.js"></script>
 
 
 

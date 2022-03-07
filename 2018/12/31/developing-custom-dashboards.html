@@ -8,17 +8,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css">
 
 	<!--Favicon-->
-	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/cooperlutz.github.io/2018/12/31/developing-custom-dashboards.html">
+	<link rel="canonical" href="/2018/12/31/developing-custom-dashboards.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
-		href="/cooperlutz.github.io/feed.xml" />
+		href="/feed.xml" />
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -47,12 +47,12 @@
     <header class="site-header">
 	<div class="branding">
 		
-		<a href="/cooperlutz.github.io/">
-			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		<a href="/">
+			<img class="avatar" src="/assets/img/CoopersCloudLogoColor.png" alt=""/>
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+			<a href="/">Cooper's Cloud</a>
 		</h1>
 	</div>
 	<nav class="site-nav">
@@ -136,7 +136,7 @@
 
     <div class="content">
       <article >
-  <header style="background-image: url('/cooperlutz.github.io/')">
+  <header style="background-image: url('/')">
     <h1 class="title">Developing Custom Dashboards in Azure</h1>
     
     <p class="meta">
@@ -155,7 +155,7 @@
 <p>This is the default Dashboard that I use for my personal Azure environment. I've kept the Dashboard simple, but effective, for my purposes. I've embedded my logo, links to some Azure documentation that I visit regularly, the "All Resources" tile to quickly access Resources I've recently been working with, an Application Insights availability test that monitors the availability of the <a href="https://cooperscloud.tech">cooperscloud.tech</a> site, and an image of a Sample Azure application architecture.</p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/DashboardImage-1024x646.png" alt="image alt text" /></p>
+<p><img src="/assets/img/DashboardImage-1024x646.png" alt="image alt text" /></p>
 
 <!-- wp:heading -->
 <h2>Methods for Creating and Developing Dashboards</h2>
@@ -173,7 +173,7 @@
 <p>Existing Dashboards can be downloaded in JSON format from the Dashboard page. This feature provides the ability to manually customize a Dashboard and then save and re-deploy the Dashboard as code. This feature can be really useful when you want to quickly understand how a Tile is formatted before re-writing the code.</p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/DashboardDownload.png" alt="image alt text" /></p>
+<p><img src="/assets/img/DashboardDownload.png" alt="image alt text" /></p>
 
 <!-- wp:heading -->
 <h2>Develop Custom Azure Dashboards</h2>
@@ -199,31 +199,31 @@
 <p> <a href="https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/baseDashboard.json">https://github.com/cooperlutz/cooperscloud/blob/master/azure-dashboards/baseDashboard.json</a>.</p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/DashboardBaseJson.png" alt="image alt text" /></p>
+<p><img src="/assets/img/DashboardBaseJson.png" alt="image alt text" /></p>
 
 <!-- wp:paragraph -->
 <p>Taking a further look at the Tile definition, the first JSON object defined is the Tile's "position", giving us the ability to control the size and location on the Dashboard grid. The image below displays the Dashboard "edit" view and displays the Dashboard grid. The second part of defining our Tile is the "metadata" object, which is where we define the type and content of the Tile.</p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/DashboardGrid.png" alt="image alt text" /></p>
+<p><img src="/assets/img/DashboardGrid.png" alt="image alt text" /></p>
 
 <!-- wp:paragraph -->
 <p>The first tile defined in the Sample Dashboard is a Markdown tile which gives us the ability to create and format freeform text in Markdown syntax. In this case, I used this Markdown tile for the sole purpose of embedding my logo. </p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/DashboardCode-1024x654.png" alt="image alt text" /></p>
+<p><img src="/assets/img/DashboardCode-1024x654.png" alt="image alt text" /></p>
 
 <!-- wp:paragraph -->
 <p>Now in the case above for linking to a logo, I just linked directly to the image hosted on my website, but for the Sample Application Architecture tile, I link to an Azure Storage Account blob with a SAS token. In this way, I could link to proprietary images, such as application architectures deployed in my Azure environment, reference documentation to my applications, etc.</p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/AppArchitectureTile-1024x242.png" alt="image alt text" /></p>
+<p><img src="/assets/img/AppArchitectureTile-1024x242.png" alt="image alt text" /></p>
 
 <!-- wp:paragraph -->
 <p>Once we've defined all of the tiles in our Dashboard, all we have to do is save the file and click the "Upload" button from the Dashboard blade. We'll be prompted to choose the file to upload and then the Dashboard will be deployed and populated!</p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/UploadDashboard-1024x80.png" alt="image alt text" /></p>
+<p><img src="/assets/img/UploadDashboard-1024x80.png" alt="image alt text" /></p>
 
 <!-- wp:heading -->
 <h2>Share Azure Dashboards</h2>
@@ -237,15 +237,15 @@
 <p>Click the "Share" button at the top of the "Dashboard" blade, then choose a name, subscription, and location. By default Azure will create a "dashboards" Resource Group for the Dashboard resource to be deployed to, but you can deploy it to a different RG if you prefer.</p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/ShareDashboard-1024x372.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ShareDashboard-1024x372.png" alt="image alt text" /></p>
 
-<p><img src="/cooperlutz.github.io/assets/img/SharedDashboardResource-1024x360.png" alt="image alt text" /></p>
+<p><img src="/assets/img/SharedDashboardResource-1024x360.png" alt="image alt text" /></p>
 
 <!-- wp:paragraph -->
 <p>Once the Dashboard is shared, other users will have the ability to switch to the Shared Dashboard under their Dashboard selector. Shared Dashboards also come with the ability to control which users have access to view the Dashboard.</p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/OtherUserSelectDashboard.png" alt="image alt text" /></p>
+<p><img src="/assets/img/OtherUserSelectDashboard.png" alt="image alt text" /></p>
 
 <!-- wp:heading -->
 <h2>Azure Portal Home versus Dashboard View</h2>
@@ -259,7 +259,7 @@
 <p>Although I do like the look and feel of the new "Home" and it has some great resources, it's currently geared more toward a "first time logging in" experience. I personally hope it evolves toward serving as a hub for news, developments, and releases within Azure in addition to the educational reference links.</p>
 <!-- /wp:paragraph -->
 
-<p><img src="/cooperlutz.github.io/assets/img/AzureHomevsDashboard-1024x318.png" alt="image alt text" /></p>
+<p><img src="/assets/img/AzureHomevsDashboard-1024x318.png" alt="image alt text" /></p>
 </section>
   
 
@@ -273,7 +273,7 @@
 
     </div>
     
-<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+<script src="/assets/js/katex_init.js"></script>
 
 
 

@@ -8,17 +8,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/cooperlutz.github.io/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css">
 
 	<!--Favicon-->
-	<link rel="shortcut icon" href="/cooperlutz.github.io/assets/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/cooperlutz.github.io/2018/03/05/azure-hybrid-workers.html">
+	<link rel="canonical" href="/2018/03/05/azure-hybrid-workers.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Cooper's Cloud"
-		href="/cooperlutz.github.io/feed.xml" />
+		href="/feed.xml" />
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -47,12 +47,12 @@
     <header class="site-header">
 	<div class="branding">
 		
-		<a href="/cooperlutz.github.io/">
-			<img class="avatar" src="/cooperlutz.github.io/assets/img/CoopersCloudLogoColor.png" alt=""/>
+		<a href="/">
+			<img class="avatar" src="/assets/img/CoopersCloudLogoColor.png" alt=""/>
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/cooperlutz.github.io/">Cooper's Cloud</a>
+			<a href="/">Cooper's Cloud</a>
 		</h1>
 	</div>
 	<nav class="site-nav">
@@ -136,7 +136,7 @@
 
     <div class="content">
       <article >
-  <header style="background-image: url('/cooperlutz.github.io/')">
+  <header style="background-image: url('/')">
     <h1 class="title">Azure Hybrid Runbook Workers are Awesome</h1>
     
     <p class="meta">
@@ -146,7 +146,7 @@
   </header>
   <section class="post-content"><p>Azure Hybrid Runbook Workers enable Azure Automation Runbooks to run in a local context (OS/Server level). The Hybrid Runbook Worker’s functionality is achieved through a combination of Azure Log Analytics, Microsoft Monitoring Agent, and Azure Automation Runbooks.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/HybridWorkerDiagram-1.png" alt="image alt text" /></p>
+<p><img src="/assets/img/HybridWorkerDiagram-1.png" alt="image alt text" /></p>
 
 <h2>Why Are Hybrid Runbook Workers Awesome?</h2>
 <p>Central Management of Scripts - store all automation scripts needed across the environment, in one location.</p>
@@ -177,31 +177,31 @@
 
 <p>Navigate to “Log Analytics” in the Azure portal and add a new Workspace.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/CreateWorkspace.png" alt="image alt text" /></p>
+<p><img src="/assets/img/CreateWorkspace.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>We need to add the “Automation and Control” solution to our OMS Workspace. Navigate to the OMS Portal and open the Solutions Gallery.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/OpenOMSPortal-1.png" alt="image alt text" /></p>
+<p><img src="/assets/img/OpenOMSPortal-1.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>Within the OMS Solutions Gallery, select “Automation &amp; Control”.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/SolutionsGallery.png" alt="image alt text" /></p>
+<p><img src="/assets/img/SolutionsGallery.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>The solution will provide a warning that the Workspace needs to be configured.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/ConfigureWorkspace.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ConfigureWorkspace.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>Specify the Azure Automation Account you will be using to run your Hybrid Worker. If you don’t already have an Automation Account, you can create a new one from here.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/ConfigureWorkspaceAutomation.png" alt="image alt text" /></p>
+<p><img src="/assets/img/ConfigureWorkspaceAutomation.png" alt="image alt text" /></p>
 
 <p> </p>
 <h4>Configure the Hybrid Runbook Worker Server</h4>
@@ -212,7 +212,7 @@
 <p><em>Note if you are not using Windows Server 2016, you may need to install Windows Management Framework 5.0 to utilize necessary PowerShell scripts.</em></p>
 <pre>Install-Script -Name New-OnPremiseHybridWorker -RequiredVersion 1.0</pre>
 
-<p><img src="/cooperlutz.github.io/assets/img/InstallHRWModule.png" alt="image alt text" /></p>
+<p><img src="/assets/img/InstallHRWModule.png" alt="image alt text" /></p>
 
 <p> </p>
 
@@ -220,7 +220,7 @@
 <pre>New-OnPremiseHybridWorker.ps1  -WorkspaceName &lt;NameOfOMSWorkspace&gt;</pre>
 <p>The script will ask you to input the additional parameters needed:</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/newhybridworkerscript.png" alt="image alt text" /></p>
+<p><img src="/assets/img/newhybridworkerscript.png" alt="image alt text" /></p>
 <h4></h4>
 <p>And that’s that, the server configuration is complete!</p>
 
@@ -228,7 +228,7 @@
 <h4>Create the Runbook</h4>
 <p>Create a new Runbook within your Azure Automation Account.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/CreateRunbook.png" alt="image alt text" /></p>
+<p><img src="/assets/img/CreateRunbook.png" alt="image alt text" /></p>
 
 <p> </p>
 
@@ -236,23 +236,23 @@
 
 <p><strong>Note: if using non-standard modules, the modules must be installed on the Hybrid Worker VM before executing.</strong></p>
 
-<p><img src="/cooperlutz.github.io/assets/img/RunbookCode.png" alt="image alt text" /></p>
+<p><img src="/assets/img/RunbookCode.png" alt="image alt text" /></p>
 <h4></h4>
 <h4>Test the Solution</h4>
 <p>Stop Print Spooler on the Virtual Machine.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/SpoolerStopped.png" alt="image alt text" /></p>
+<p><img src="/assets/img/SpoolerStopped.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>Start your Runbook and specify that it will be run on the Hybrid Worker.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/StartRunbook.png" alt="image alt text" /></p>
+<p><img src="/assets/img/StartRunbook.png" alt="image alt text" /></p>
 
 <h2>Success!</h2>
 <p>After the Runbook task has completed, Print Spooler is running on the server.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/SpoolerRunning.png" alt="image alt text" /></p>
+<p><img src="/assets/img/SpoolerRunning.png" alt="image alt text" /></p>
 
 <p> </p>
 <h2>Azure Automation Watcher Tasks</h2>
@@ -278,30 +278,30 @@
 <h4>Add the Local VM Credentials to Azure Automation</h4>
 <p>Navigate to the “Shared Resources” section of the Automation Account and add a new credential. For testing purposes, I’m just adding the local admin account.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/Credentials.png" alt="image alt text" /></p>
+<p><img src="/assets/img/Credentials.png" alt="image alt text" /></p>
 
 <h4>Configure the Watcher Task</h4>
 <p>Navigate to the “Watcher tasks” section within your Automation Account, and click “Add a watcher task”.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/WatcherAdd.png" alt="image alt text" /></p>
+<p><img src="/assets/img/WatcherAdd.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>Specify a name for the task and the frequency to run (1-59 in minutes). Then select the “Watch-Service” Runbook as the “Watcher” and input the service name parameter (in this case, “Spooler”) and computer name parameter (in this case, “localhost”).</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/MultiP2SDiagram.png" alt="image alt text" /></p>
+<p><img src="/assets/img/MultiP2SDiagram.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>For the “Action”, select the “Process-Service” Runbook, the parameter should be left blank as the value will be passed from the Watcher task.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/WatcherAction.png" alt="image alt text" /></p>
+<p><img src="/assets/img/WatcherAction.png" alt="image alt text" /></p>
 
 <p> </p>
 
 <p>Once again, we manually stop the Spooler service and wait for our watcher task to execute.</p>
 
-<p><img src="/cooperlutz.github.io/assets/img/WatcherOutput.png" alt="image alt text" /></p>
+<p><img src="/assets/img/WatcherOutput.png" alt="image alt text" /></p>
 
 <p> </p>
 <h2>Success!</h2>
@@ -318,7 +318,7 @@
 
     </div>
     
-<script src="/cooperlutz.github.io/assets/js/katex_init.js"></script>
+<script src="/assets/js/katex_init.js"></script>
 
 
 

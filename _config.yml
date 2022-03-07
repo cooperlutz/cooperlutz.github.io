@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "/cooperlutz.github.io"
+baseurl: ""
 url: "https://cooperlutz.github.io/"
 
 # THEME-SPECIFIC CONFIGURATION
